@@ -10,3 +10,4 @@ accounts-password
 twbs:bootstrap
 iron:router
 accounts-base
+tmeasday:presence
