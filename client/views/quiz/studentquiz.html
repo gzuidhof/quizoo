@@ -1,0 +1,26 @@
+<template name="studentquiz">
+
+<h4>Quiz: {{quiz.name}}</h4>
+
+<ul>
+  {{#each quiz.questions}}
+    {{> question}}
+    {{> answers}}
+  {{/each}}
+</ul>
+
+
+</template>
+
+<template name="question">
+  <h2><b>{{question}}</b></h2>
+</template>
+
+
+<template name="answers">
+  <ul>
+    {{#each answers}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</template>

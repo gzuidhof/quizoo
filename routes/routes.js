@@ -15,8 +15,6 @@ Router.route('/login/', {
   }
 });
 
-
-
 // we want to be sure that the user is logging in
 // for all routes but login
 Router.onBeforeAction(function () {
@@ -39,10 +37,10 @@ Router.route('/lobby', {
   }
 });
 // add here other routes
-Router.route('/student/quiz/:_id', {
+Router.route('/student/quiz/:_id?', {
   action: function () {
     this.render('base');
-    this.render('quizstudent');
+    this.render('studentquiz');
   }
 });
 
