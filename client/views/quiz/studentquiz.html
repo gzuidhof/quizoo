@@ -1,15 +1,17 @@
 <template name="studentquiz">
 
-<h4>Quiz: {{quiz.name}}</h4>
+{{#with quiz}}
 
-<ul>
-  {{#each quiz.questions}}
-    {{> question}}
-    {{> answers}}
-  {{/each}}
-</ul>
+  <h4>Quiz: {{name}}</h4>
 
+  <ul>
+    {{#each questions}}
+      {{> question}}
+      {{> answers}}
+    {{/each}}
+  </ul>
 
+{{/with}}
 </template>
 
 <template name="question">
