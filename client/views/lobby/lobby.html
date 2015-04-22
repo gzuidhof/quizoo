@@ -1,10 +1,4 @@
 <template name="lobby">
-
-	<header>
-		{{> header}}
-	</header>
-	<body>
-		<div id="main">
 			<center>
 				<ul>
 				  {{#each users}}
@@ -12,15 +6,8 @@
 				  {{/each}}
 				</ul>
 			</center>
-			<footer>
-				{{> footer}}
-			</footer>
-		</div>
-	</body>
 </template>
 
 <template name="user">
   <li>{{text}}</li>
 </template>
-
-

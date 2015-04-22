@@ -1,13 +1,7 @@
-// Home Route
-Router.route('/', {
-  name: 'home',
-  action: function () {
-    this.render('home');
-  }
-});
 Router.route('/login/', {
   name: '/login',
   action: function () {
+    this.render('home');
     this.render('login');
   }
 });
@@ -28,6 +22,7 @@ Router.onBeforeAction(function () {
 Router.route('/lobby', {
   name: '/lobby',
   action: function () {
+    this.render('home');
     this.render('lobby');
   }
 });
@@ -35,5 +30,5 @@ Router.route('/lobby', {
 
 // catchall route
 Router.route('/(.*)', function () {
-    this.redirect('/');
+    this.redirect('/login');
 });
