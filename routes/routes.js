@@ -1,16 +1,16 @@
 
 Router.route('/', {
   name: '/home',
+  layoutTemplate: 'base',
   action: function () {
-    this.render('base');
     this.render('home');
   }
 });
 
 Router.route('/login/', {
   name: '/login',
+  layoutTemplate: 'base',
   action: function () {
-    this.render('base');
     this.render('login');
   }
 });
@@ -31,15 +31,15 @@ Router.onBeforeAction(function () {
 
 Router.route('/lobby', {
   name: '/lobby',
+  layoutTemplate: 'base',
   action: function () {
-    this.render('base');
     this.render('lobby');
   }
 });
 // add here other routes
 Router.route('/student/quiz/:_id?', {
+  layoutTemplate: 'base',
   action: function () {
-    this.render('base');
     this.render('studentquiz');
   }
 });

@@ -1,13 +1,24 @@
 <template name="base">
+      <div id="page-wrapper">
 
-      <header>
-      {{> header}}
-      </header>
+           <div id="sidebar-wrapper">
+           {{> sidebar}}
+           </div>
 
-      <div id="main">
-           {{> yield}}
-        <footer>
-            {{> footer}}
-        </footer>
-    </div>
+          <div id="content-wrapper">
+            <div class="page-content">
+
+              <header>
+                {{> header}}
+              </header>
+
+                {{> yield}}
+
+
+              <footer>
+                {{> footer}}
+              </footer>
+            </div>
+          </div>
+      </div>
 </template>
