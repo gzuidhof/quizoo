@@ -44,6 +44,15 @@ Router.route('/student/quiz/:_id?', {
   }
 });
 
+// add here other routes
+Router.route('/teacher/editquiz', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('editquiz');
+  }
+});
+
+
 
 
 // catchall route

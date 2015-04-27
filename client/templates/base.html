@@ -7,17 +7,19 @@
 
           <div id="content-wrapper">
             <div class="page-content">
+            
+                <header>
+                  {{> header}}
+                </header>
 
-              <header>
-                {{> header}}
-              </header>
+                <div style="margin: 10px">
+                  {{> yield}}
+                </div>
 
-                {{> yield}}
+                <footer>
+                  {{> footer}}
+                </footer>
 
-
-              <footer>
-                {{> footer}}
-              </footer>
             </div>
           </div>
       </div>
