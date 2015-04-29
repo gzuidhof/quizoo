@@ -1,26 +1,17 @@
 <template name="lobby">
-
-	<header>
-		{{> header}}
-	</header>
-	<body>
-		<div id="main">
-			<center>
-				<ul>
-				  {{#each users}}
-					{{> user}}
-				  {{/each}}
-				</ul>
-			</center>
-			<footer>
-				{{> footer}}
-			</footer>
-		</div>
-	</body>
+<h1>lobby</h1>
+			{{#each users}}
+				{{profile.username}}
+				{{#if presence}}
+					is Online!
+				{{else}}
+					is not online..
+				{{/if}}
+			{{/each}}
 </template>
 
 <template name="user">
-  <li>{{text}}</li>
+  <li>{{userId}}</li>
 </template>
 
 

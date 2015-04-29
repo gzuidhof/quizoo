@@ -1,17 +1,11 @@
 if (Meteor.isClient) {
-	//Meteor.subscribe('userPresence');
+	Meteor.subscribe('userPresence');
 
   // This code only runs on the client
-Template.lobby.helpers({
-	    users: [
-      { text: "This is task 1" },
-      { text: "This is task 2" },
-      { text: "This is task 3" }
-    ]
-	});
-}
+Template.lobby.users = function() { return Meteor.users.find(); }
+Template.lobby.presence = function() { return Meteor.presences.findOne({userId: this._id}); }
 
-/**if (Meteor.isServer) {
+if (Meteor.isServer) {
 	Meteor.publish('userPresence', function() {
 	  // Setup some filter to find the users your user
 	  // cares about. It's unlikely that you want to publish the 
@@ -23,4 +17,4 @@ Template.lobby.helpers({
 
 	  return Presences.find(filter, { fields: { state: true, userId: true }});
 	});
-}**/ 
+}
