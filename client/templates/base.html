@@ -1,0 +1,26 @@
+<template name="base">
+      <div id="page-wrapper" class="{{#if isOpen}}open{{/if}}">
+
+           <div id="sidebar-wrapper">
+           {{> sidebar}}
+           </div>
+
+          <div id="content-wrapper">
+            <div class="page-content">
+            
+                <header>
+                  {{> header}}
+                </header>
+
+                <div style="margin: 10px">
+                  {{> yield}}
+                </div>
+
+                <footer>
+                  {{> footer}}
+                </footer>
+
+            </div>
+          </div>
+      </div>
+</template>
