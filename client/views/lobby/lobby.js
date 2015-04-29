@@ -1,9 +1,13 @@
-if (Meteor.isClient) {
+if (Meteor.isClient) 
+{
 	Meteor.subscribe('userPresence');
+	  // This code only runs on the client
+	Template.lobby.helpers({
+		presence: function() { return Presences.find(); },
+		users: function() { return Meteor.users.find(); }
+	});
 
-  // This code only runs on the client
-Template.lobby.users = function() { return Meteor.users.find(); }
-Template.lobby.presence = function() { return Meteor.presences.findOne({userId: this._id}); }
+}
 
 if (Meteor.isServer) {
 	Meteor.publish('userPresence', function() {
@@ -13,8 +17,11 @@ if (Meteor.isServer) {
 
 	  // If for example we wanted to publish only logged in users we could apply:
 	  // filter = { userId: { $exists: true }};
-	  var filter = {}; 
+		var filter = {}; 
 
-	  return Presences.find(filter, { fields: { state: true, userId: true }});
+		var presences = Presences.find(filter,{fields: {state: true, userId: true}});
+		console.log(presences);
+		console.log('presences');
+		return presences;
 	});
 }
