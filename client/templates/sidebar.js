@@ -39,9 +39,10 @@ Template.sidebar.helpers({
       name: "Docent",
       links: [
         {
-          name: "Statistieken",
-          url: "/teacher/stat",
-          icon: "fa fa-bar-chart"
+          name: "Quiz starten",
+          url: "/teacher/quiz",
+          icon: "fa fa-rocket"
+
         },
         {
           name: "Quizzes beheren",
@@ -53,7 +54,11 @@ Template.sidebar.helpers({
           url: "/teacher/editclass",
           icon: "fa fa-users"
         },
-
+        {
+          name: "Statistieken",
+          url: "/teacher/stat",
+          icon: "fa fa-bar-chart"
+        },
       ]
     }
 
