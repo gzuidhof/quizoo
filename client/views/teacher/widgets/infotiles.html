@@ -1,0 +1,30 @@
+<template name="infotiles">
+
+  {{#each tiles}}
+    {{> infotile}}
+  {{/each}}
+
+</template>
+
+<template name="infotile">
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="widget">
+      <div class="widget-body">
+
+        <div class="widget-content">
+          <div class="widget-icon {{color}} pull-left" style="font-style: italic">
+            <i class="{{icon}}"></i>
+          </div>
+
+          <div class="title">
+            {{value}}
+          </div>
+
+          <div class="comment">
+            {{title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
