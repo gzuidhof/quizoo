@@ -447,6 +447,10 @@ ul.sidebar .sidebar-list .menu-icon {
   height: 150px;
   overflow-y: auto;
 }
+.widget .widget-body.xsmall {
+  height: 80px;
+  overflow-y: auto;
+}
 .widget .widget-body.no-padding {
   padding: 0;
 }
