@@ -36,7 +36,7 @@ Router.route('/lobby', {
     this.render('lobby');
   }
 });
-// add here other routes
+
 Router.route('/student/quiz/:_id?', {
   layoutTemplate: 'base',
   action: function () {
@@ -44,13 +44,27 @@ Router.route('/student/quiz/:_id?', {
   }
 });
 
-// add here other routes
 Router.route('/teacher/editquiz', {
   layoutTemplate: 'base',
   action: function () {
     this.render('editquiz');
   }
 });
+
+Router.route('/teacher/quiz', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('teacherquiz');
+  }
+});
+
+Router.route('/teacher/dashboard', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('teacherdashboard');
+  }
+});
+
 
 
 

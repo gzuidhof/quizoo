@@ -45,14 +45,9 @@ Template.sidebar.helpers({
 
         },
         {
-          name: "Quizzes beheren",
-          url: "/teacher/editquiz",
-          icon: "fa fa-puzzle-piece"
-        },
-        {
-          name: "Klas beheren",
-          url: "/teacher/editclass",
-          icon: "fa fa-users"
+          name: "Dashboard",
+          url: "/teacher/dashboard",
+          icon: "fa fa-tachometer"
         },
         {
           name: "Statistieken",
