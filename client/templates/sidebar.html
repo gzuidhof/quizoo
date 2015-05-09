@@ -2,14 +2,18 @@
     <ul class="sidebar">
         <li class="sidebar-main">
           <a href="#" class="toggle-sidebar-area">
-            Dashboard
+            {{sidebarTitle}}
             <span class="menu-icon glyphicon glyphicon-transfer"></span>
           </a>
         </li>
-        <li class="sidebar-title"><span>NAVIGATION</span></li>
-        <li class="sidebar-list">
-          <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
-        </li>
+        {{#each sections}}
+        <li class="sidebar-title"><span>{{name}}</span></li>
+          {{#each links}}
+          <li class="sidebar-list">
+            <a href="{{url}}">{{name}} <span class="menu-icon {{icon}}"></span></a>
+          </li>
+          {{/each}}
+        {{/each}}
       </ul>
       <div class="sidebar-footer">
         <div class="col-xs-4">
