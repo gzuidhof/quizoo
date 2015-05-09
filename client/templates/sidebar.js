@@ -27,7 +27,7 @@ Template.sidebar.helpers({
       name: "Leerling",
       links: [
         {
-          name: "Meedoen aan quiz",
+          name: "Meedoen met quiz",
           url: "/lobby",
           icon: "fa fa-graduation-cap"
         }
