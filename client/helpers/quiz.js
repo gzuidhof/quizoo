@@ -1,3 +1,6 @@
+Quizes = new Mongo.Collection('quizes')
+
+
 //Not functional yet :(,
 //duplicate code in studentquiz.js / teacherquiz.js without this
 Template.registerHelper('quiz', function() {
