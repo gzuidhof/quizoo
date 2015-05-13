@@ -4,19 +4,32 @@
     <div class="widget-header">
         <i class="fa fa-puzzle-piece"></i> Quizzes
     </div>
-
     <div class="widget-body no-padding">
-        <div class="widget-content" style="height:298px">
-            <table class="table table-hover table-striped">
-                <tbody>
-                  <tr>
-                    <th>Titel</th>
-                    <th>Aantal vragen</th>
-                    <th>Aangepast</th>
-                    <th>Aangemaakt</th>
-                  </tr>
-                </tbody>
-            </table>
+        <div class="widget-content" style="height:298px; overflow-y: auto">
+          <table class="table table-hover table-striped table-fixed">
+            <thead>
+                <tr>
+                  <th>Titel</th>
+                  <th>Aantal vragen</th>
+                  <th>Aangepast</th>
+                  <th>Aangemaakt</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+              {{#each quiz}}
+                <tr>
+                  <td>{{name}}</td>
+                  <td class="text-center">0</td>
+                  <td>{{dateModified}}</td>
+                  <td>{{dateCreated}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+
+
+          </table>
         </div>
     </div>
   </div>

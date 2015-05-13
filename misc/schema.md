@@ -1,13 +1,13 @@
 Quiz: {
   _id,
-  created: Date,
-  last_modified: Date,
-  last_used: Date,
+  name: string,
+  questions: Question _id []
 
+  createdBy: User _id,
 
-
-
-
+  dateCreated: Date,
+  dateModified: Date,
+  dateLastUsed: Date,
 }
 
 Question: {
