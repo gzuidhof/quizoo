@@ -1,3 +1,3 @@
 Template.registerHelper('quiz', function() {
-  return Quizzes.find();
+  return Quizzes.find({}, {sort: {dateModified: -1}});
 });

@@ -1,0 +1,15 @@
+.hide-last tbody tr:hover td:last-child {
+      visibility: visible;
+      padding: 0px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+}
+
+.hide-last tbody tr td:last-child {
+    color: #4d4d4d;
+    text-decoration:none;
+    visibility: hidden;
+    padding: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
