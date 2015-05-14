@@ -14,5 +14,4 @@ Meteor.methods({
     console.log('Quiz "' + quizName + '" created.');
   }
 
-
 });

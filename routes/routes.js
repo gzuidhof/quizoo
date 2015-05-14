@@ -40,14 +40,14 @@ Router.route('/lobby', {
 Router.route('/student/quiz/:_id?', {
   layoutTemplate: 'base',
   action: function () {
-    this.render('studentquiz');
+    this.render('studentQuiz');
   }
 });
 
 Router.route('/teacher/editquiz', {
   layoutTemplate: 'base',
   action: function () {
-    this.render('editquiz');
+    this.render('editQuiz');
   }
 });
 
@@ -61,7 +61,7 @@ Router.route('/teacher/quiz', {
 Router.route('/teacher/dashboard', {
   layoutTemplate: 'base',
   action: function () {
-    this.render('teacherdashboard');
+    this.render('teacherDashboard');
   }
 });
 
