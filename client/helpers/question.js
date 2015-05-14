@@ -1,3 +1,3 @@
-Template.registerHelper('question', function() {
+Template.registerHelper('allQuestions', function() {
   return Questions.find();
 });

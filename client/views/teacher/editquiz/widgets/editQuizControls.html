@@ -1,0 +1,54 @@
+<template name="editQuizControls">
+  <div class="widget">
+
+    <div class="widget-header">
+        <i class="fa fa-gears"></i> Over de Quiz
+    </div>
+
+    <div class="widget-body">
+      <dl class="">
+        <dd>
+          <i class="fa fa-question-circle"></i> Aantal vragen
+          <div class="pull-right">
+            {{questions.count}}
+          </div>
+        </dd>
+
+        <dd>
+          <i class="fa fa-user"></i> Aangemaakt door
+          <div class="pull-right">
+            {{usernameOfId quiz.createdBy}}
+          </div>
+        </dd>
+
+        <dd>
+          <i class="fa fa-calendar"></i> Aangemaakt op
+          <div class="pull-right">
+            {{prettifyTimestamp quiz.dateCreated}}
+            <br>
+            <div class="pull-right">
+              <small>({{prettifyDate quiz.dateCreated}})</small>
+            </div>
+          </div>
+        </dd>
+
+
+      </dl>
+
+    </div>
+
+    <div class="widget-footer">
+        <button type="button" class="btn btn-sm btn-danger outline"><i class="fa fa-remove"></i> Verwijderen</button>
+      <div class="pull-right">
+        {{#if true}}
+        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-floppy-o"></i> Wijzigingen Opslaan</button>
+        {{else}}
+        <button type="button" class="btn btn-default btn-sm disabled"><i class="fa fa-check"></i> Opgeslagen!</button>
+        {{/if}}
+      </div>
+    </div>
+
+
+
+  </div>
+</template>

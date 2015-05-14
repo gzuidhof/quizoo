@@ -1,0 +1,29 @@
+<template name="editTitle">
+  <div class="widget">
+
+    <div class="widget-header">
+      {{#if true}}
+        <form>
+          <div class="input-group">
+            <input type="text" name="quizName" class="form-control" placeholder="Titel voor de quiz">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Instellen</button>
+            </span>
+          </div>
+        </form>
+      {{else}}
+      <h4><i class="fa fa-graduation-cap"></i> {{title}}</h4>
+      {{/if}}
+    </div>
+
+
+
+        <!--<h2 style="margin-left: 10px"> {{quiz.name}}</h2>-->
+
+
+
+
+
+
+  </div>
+</template>

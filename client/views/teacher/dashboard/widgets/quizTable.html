@@ -17,13 +17,13 @@
             </thead>
 
             <tbody>
-              {{#each quiz}}
+              {{#each allQuizzes}}
                 <tr>
                   <td>{{name}}</td>
                   <td>{{prettifyDate dateModified}}</td>
                   <td>{{prettifyDate dateCreated}}</td>
                   <td>
-        						<a class="btn btn-default btn-sm dropdown-toggle" href="#"><i class="fa fa-pencil"></i> Bewerken</a>
+        						<a class="btn btn-default btn-sm dropdown-toggle" href="/teacher/editquiz/{{_id}}"><i class="fa fa-pencil"></i> Bewerken</a>
                   </td>
 
                 </tr>
