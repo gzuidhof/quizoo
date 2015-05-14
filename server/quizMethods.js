@@ -8,7 +8,8 @@ Meteor.methods({
       name: quizName,
       createdBy: currentUserId,
       dateCreated: now,
-      dateModified: now
+      dateModified: now,
+      questions: []
     });
 
     console.log('Quiz "' + quizName + '" created.');

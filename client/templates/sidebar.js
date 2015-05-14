@@ -5,7 +5,7 @@ Template.sidebar.events = {
 }
 
 Template.sidebar.helpers({
-  sidebarTitle: "Dashboard",
+  sidebarTitle: "Quizoo",
   sections: [
     {
       name: "Navigatie",

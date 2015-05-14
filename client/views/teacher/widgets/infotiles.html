@@ -1,8 +1,28 @@
 <template name="infotiles">
 
-  {{#each tiles}}
-    {{> infotile}}
-  {{/each}}
+  {{> infotile
+    value=16
+    title="Leerlingen"
+    color="green"
+    icon="fa fa-users"}}
+
+  {{> infotile
+    value=3
+    title="Teams"
+    color="red"
+    icon="fa fa-sitemap"}}
+
+  {{> infotile
+    value=quiz.count
+    title="Quizzes"
+    color="orange"
+    icon="fa fa-graduation-cap"}}
+
+  {{> infotile
+    value=question.count
+    title="Vragen"
+    color="blue"
+    icon="fa fa-question-circle"}}
 
 </template>
 

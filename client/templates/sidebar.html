@@ -6,15 +6,15 @@
             <span class="menu-icon glyphicon glyphicon-transfer"></span>
           </a>
         </li>
-        {{#each sections}}
-        <li class="sidebar-title"><span>{{name}}</span></li>
+      {{#each sections}}
+          <li class="sidebar-title"><span>{{name}}</span></li>
           {{#each links}}
           <li class="sidebar-list">
             <a href="{{url}}">{{name}} <span class="menu-icon {{icon}}"></span></a>
           </li>
           {{/each}}
-        {{/each}}
-      </ul>
+      {{/each}}
+    </ul>
       <div class="sidebar-footer">
         <div class="col-xs-4">
           <a href="https://github.com/rahazan/quizoo" target="_blank">

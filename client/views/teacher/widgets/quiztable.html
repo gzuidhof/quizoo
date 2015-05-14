@@ -20,9 +20,8 @@
               {{#each quiz}}
                 <tr>
                   <td>{{name}}</td>
-                  <td class="text-center">0</td>
+                  <td class="text-center">{{questions.length}}</td>
                   <td>{{prettifyDate dateModified}}</td>
-                  <td>{{prettifyDate dateCreated}}</td>
                   <td>{{prettifyDate dateCreated}}</td>
                 </tr>
               {{/each}}
