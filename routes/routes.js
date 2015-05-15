@@ -60,6 +60,13 @@ Router.route('/teacher/quiz', {
   }
 });
 
+Router.route('/teacher/quizanswer', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('quizAnswer');
+  }
+});
+
 Router.route('/teacher/dashboard', {
   layoutTemplate: 'base',
   action: function () {

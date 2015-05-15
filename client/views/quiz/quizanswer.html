@@ -1,5 +1,6 @@
-<template name="teacherQuiz">
-    <div class="row">
+<template name="quizAnswer">
+
+	<div class="row">
         {{>quizTitles}}
     
     </div>
@@ -11,14 +12,13 @@
 	
 	<div class="row">
 	
-		{{>quizSolutions solution=false}}
+		{{>quizSolutions solution = true}}
 	
 	
 	</div>
 	
 	<div class="row">
-
-        <div class="col-lg-12 text-center pull-right">
+                <div class="col-lg-12 text-center pull-right">
 	  
 			<div class="btn-group pull-right">
             <a href="../teacher/quizanswer" class="btn btn-lg btn-primary" role="button" >Antwoord</a>
@@ -32,4 +32,5 @@
     </div>
 	
 	
+
 </template>
