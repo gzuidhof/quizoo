@@ -1,0 +1,48 @@
+<template name="currentQuiz">
+
+
+
+  <div class="widget">
+
+    <div class="widget-header">
+        <i class="fa fa-graduation-cap"></i> Huidige quiz
+    </div>
+
+    <div class="widget-body small">
+
+      {{#if false}}
+
+      <h4>Lorem ipsum dolor sit amet quiz</h4>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active" style="width:40%; min-width:4em">
+          40% voltooid
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <button type="button" class="btn btn-danger btn-sm"> Afbreken </button>
+        <button type="button" class="btn btn-default">Voortzetten</button>
+      </div>
+
+      {{else}}
+
+      <div class="row">
+        <h5 class="text-center">Op dit moment is geen quiz bezig</h5>
+
+        <div class="col-lg-6 col-lg-offset-3 text-center">
+          <button type="button" class="btn btn-success btn-lg">
+            <span class="fa fa-graduation-cap"></span> Quiz starten
+            </button>
+        </div>
+
+      </div>
+
+      {{/if}}
+
+    </div>
+
+
+  </div>
+
+
+</template>

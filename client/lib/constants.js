@@ -6,5 +6,5 @@ if (Meteor.App) {
 
 Meteor.App = {
   NAME: 'Quizoo',
-  DESCRIPTION: 'In class quizes'
+  DESCRIPTION: 'In class quizzes'
 };

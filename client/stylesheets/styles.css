@@ -1,0 +1,37 @@
+.hide-last tbody tr:hover td:last-child {
+      visibility: visible;
+      padding: 0px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+}
+
+.hide-last tbody tr td:last-child {
+    color: #4d4d4d;
+    text-decoration:none;
+    visibility: hidden;
+    padding: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.btn.outline {
+    background: none;
+    /*padding: 12px 22px;*/
+}
+
+.btn-danger.outline {
+    border: 1px solid #D9534F;
+    color: #D9534F;
+}
+
+.btn-danger.outline:active, .btn-danger.outline.active {
+    border-color: #D9534F;
+    color: #D9534F;
+    box-shadow: none;
+}
+
+
+.btn-danger.outline:hover, .btn-danger.outline:focus, .btn-danger.outline:active, .btn-danger.outline.active, .open > .dropdown-toggle.btn-danger {
+    color: #D9534F;
+    border-color: #D9534F;
+    background: #Fee;
+}

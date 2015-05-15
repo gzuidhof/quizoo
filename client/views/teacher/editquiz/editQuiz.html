@@ -1,0 +1,25 @@
+<template name="editQuiz">
+
+    <div class="col-lg-9">
+      <div class=row>
+      {{> editTitle quiz=quiz}}
+      </div>
+      {{#each questions}}
+      <div class=row>
+        {{> editQuestion}}
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="col-lg-3">
+      <div class="row">
+        {{> editQuizControls}}
+      </div>
+
+      <div class="row">
+        {{> createQuestion}}
+      </div>
+
+    </div>
+
+</template>
