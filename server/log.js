@@ -1,7 +1,6 @@
 Meteor.methods({
-  'log': function() {
-    console.log("asdf");
+  'log': function(message) {
+    console.log(message);
   }
-
 
 });

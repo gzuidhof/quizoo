@@ -35,7 +35,6 @@ Student: {
   name: string, //IRL Name
   points: number (integer),
   powers: Power _id [],
-
 }
 
 Team: {

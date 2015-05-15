@@ -6,5 +6,6 @@ Template.registerHelper("prettifyTimestamp", function(timestamp) {
 });
 
 Template.registerHelper("usernameOfId", function(userId) {
-    return Meteor.users.findOne({_id:userId});
+    var user = Meteor.users.findOne({_id:userId}, {fields:{'username':1}});
+    return user.username;
 });
