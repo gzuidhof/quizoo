@@ -20,17 +20,11 @@ Meteor.methods({
     var quiz = Quizzes.findOne({_id:quiz_id});
     var name = quiz.name || "NO NAME";
 
-    var questions = quiz.questions;
-
-    var n = Questions.remove({'_id':{'$in':questions}});
-
     Quizzes.remove({
       _id: quiz_id,
     });
 
-
-
-    console.log('Quiz "' + name + '" removed, ' + n + ' questions removed.');
+    console.log('Quiz "' + name + '" removed.');
   },
 
   'updateQuizName': function(quiz_id, newName) {
@@ -45,6 +39,5 @@ Meteor.methods({
 
       console.log('Quiz "' + oldName + '" name changed to "' + newName + '".');
     }
-
 
 });
