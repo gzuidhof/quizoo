@@ -2,7 +2,8 @@ Router.route('/', {
   name: '/home',
   layoutTemplate: 'base',
   action: function () {
-    this.render('home');
+    var quizInstances = QuizInstances.find({});
+    this.render('home',{data: {quizInstances: quizInstances}});
   }
 });
 
@@ -29,11 +30,15 @@ Router.onBeforeAction(function () {
     except: ['/login']
 });
 
-Router.route('/lobby', {
-  name: '/lobby',
-  layoutTemplate: 'base',
-  action: function () {
-    this.render('lobby');
+Router.route('/lobby/:_id',function() {
+  if(QuizInstances.findOne({_id: this.params_id}))
+  {
+    this.layout('base');
+    this.render('lobby',{data: {quiz_id:this.params._id}});
+  }
+  else {
+    this.layout('base');
+    this.render('teacherQuiz');
   }
 });
 
@@ -74,6 +79,14 @@ Router.route('/teacher/dashboard', {
   }
 });
 
+Router.route('/user/quiz', function(){
+  //var team = Teams.findOne({participants : Meteor.userId()})
+  var quizInstance = QuizInstances.findOne();//{participants : team._id});
+
+  this.layout('base');
+  this.render('studentQuiz', {data: {quizInstance : quizInstance}})
+
+});
 
 Router.route('/student/powers', {
   layoutTemplate: 'base',
