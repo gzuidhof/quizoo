@@ -80,11 +80,11 @@ Router.route('/teacher/dashboard', {
 });
 
 Router.route('/user/quiz', function(){
-  var team = Teams.findOne({participants : Meteor.userId()})
-  var quiz = QuizInstances.findOne({participants : team._id});
+  //var team = Teams.findOne({participants : Meteor.userId()})
+  var quizInstance = QuizInstances.findOne();//{participants : team._id});
 
   this.layout('base');
-  return 'error';
+  this.render('studentQuiz', {data: {quizInstance : quizInstance}})
 
 });
 
