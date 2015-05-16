@@ -42,11 +42,10 @@ Router.route('/lobby/:_id',function() {
   }
 });
 
-Router.route('/student/quiz/:_id?', {
-  layoutTemplate: 'base',
-  action: function () {
-    this.render('studentQuiz');
-  }
+Router.route('/student/quiz', function(){
+  var quizInstance = QuizInstances.findOne({status: {$not: 4}});
+  this.layout('base');
+  this.render('studentQuiz', {data: {quizInstance : quizInstance}})
 });
 
 Router.route('/teacher/editquiz/:_id', function() {
@@ -57,16 +56,14 @@ Router.route('/teacher/editquiz/:_id', function() {
 });
 
 Router.route('/teacher/quiz', function() {
-  var quizInstance = QuizInstances.findOne();
-  this.layout('base'),
-  this.render('teacherQuiz',{data:{quizInstance: quizInstance}});
-
-});
-
-Router.route('/teacher/quizanswer', {
-  layoutTemplate: 'base',
-  action: function () {
-    this.render('quizAnswer');
+  var quizInstance = QuizInstances.findOne({status: { $not: 4 }});
+  this.layout('base')
+  if(quizInstance){
+    this.render('teacherQuiz',{data:{quizInstance: quizInstance}});
+  }
+  else {
+    var quizzes = Quizzes.find({});
+    this.render('startQuiz',{data:{quizzes: quizzes}});
   }
 });
 
@@ -77,15 +74,6 @@ Router.route('/teacher/dashboard', {
   }
 });
 
-Router.route('/user/quiz', function(){
-  //var team = Teams.findOne({participants : Meteor.userId()})
-  var quizInstance = QuizInstances.findOne();//{participants : team._id});
-
-  this.layout('base');
-  this.render('studentQuiz', {data: {quizInstance : quizInstance}})
-
-});
-
 Router.route('/student/powers', {
   layoutTemplate: 'base',
   action: function () {
@@ -93,12 +81,6 @@ Router.route('/student/powers', {
   }
 });
 
-Router.route('/student/quizanswer', {
-  layoutTemplate: 'base',
-  action: function () {
-    this.render('answered');
-  }
-});
 
 Router.route('/profile', {
   layoutTemplate: 'base',
