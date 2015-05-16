@@ -1,0 +1,21 @@
+<template name="confirmRemoveModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fa fa-exclamation-triangle"></i> {{title}}</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>{{text}}</p>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Terug</button>
+                  <button type="button" class="btn btn btn-danger confirm-remove" data-dismiss="modal">Verwijderen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
