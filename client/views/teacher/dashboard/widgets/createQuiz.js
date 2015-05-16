@@ -1,5 +1,5 @@
 Template.createQuiz.events({
-  'submit form': function(event) {
+  'click form': function(event) {
     event.preventDefault();
 
     var quizName = event.target.quizName.value;

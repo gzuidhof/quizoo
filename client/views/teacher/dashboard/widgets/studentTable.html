@@ -4,7 +4,15 @@
       <i class="fa fa-users"></i> Leerlingen
 
       <div class="pull-right">
-        <input class="form-control input-sm" placeholder="Zoeken" type="text">
+        <form>
+          <div class="input-group" style="max-width: 280px">
+            <input type="text" name="username" class="form-control" placeholder="Gebruikersnaam">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Toevoegen</button>
+            </span>
+          </div>
+        </form>
+        <!--<input class="form-control input-sm" placeholder="Zoeken" type="text">-->
       </div>
     </div>
 
@@ -22,26 +30,17 @@
             </thead>
 
             <tbody>
+
+              {{#each allStudents}}
+
               <tr>
-                <td class="text-center">0</td>
-                <td>Jorrie Jorrie</td>
+                <td class="text-center">{{points}}</td>
+                <td>{{name}}</td>
                 <td>Team-O</td>
-                <td>jorriej</td>
+                <td>{{usernameOfId user_id}}</td>
               </tr>
+              {{/each}}
 
-              <tr>
-                <td class="text-center">200</td>
-                <td>Lekker Freddie</td>
-                <td>Duurt Lan</td>
-                <td>lekkerf</td>
-              </tr>
-
-              <tr>
-                <td class="text-center">30</td>
-                <td>Nuc Longen</td>
-                <td>Duurt Lan</td>
-                <td>nucl</td>
-              </tr>
             </tbody>
           </table>
         </div>
