@@ -1,0 +1,26 @@
+.btn-answerbutton{
+  padding: 0px 0px;
+  font-size: 75px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.btn-lightblue{
+  background-color: #99CCFF;
+}
+
+.btn-lightgreen{
+  background-color:#66FF66;
+}
+
+.btn-lightyellow{
+  background-color: #FFFF66;
+}
+
+.btn-lightred{
+  background-color: #FF5C33;
+}

@@ -30,6 +30,11 @@ Template.sidebar.helpers({
           name: "Meedoen met quiz",
           url: "/lobby",
           icon: "fa fa-graduation-cap"
+        },
+        {
+          name: "Superkrachten",
+          url: "/student/powers",
+          icon: "fa fa-bolt"
         }
 
       ]

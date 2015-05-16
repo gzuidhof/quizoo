@@ -38,6 +38,7 @@ Router.route('/lobby', {
 });
 
 Router.route('/student/quiz/:_id?', {
+  layoutTemplate: 'base',
   action: function () {
     this.render('studentQuiz');
   }
@@ -70,6 +71,14 @@ Router.route('/teacher/dashboard', {
   layoutTemplate: 'base',
   action: function () {
     this.render('teacherDashboard');
+  }
+});
+
+
+Router.route('/student/powers', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('powers');
   }
 });
 
