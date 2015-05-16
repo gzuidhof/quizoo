@@ -89,6 +89,13 @@ Router.route('/profile', {
   }
 });
 
+Router.route('/teacher/quizend', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('quizEnd');
+  }
+});
+
 
 
 

@@ -1,5 +1,17 @@
 <Template name="editQuestionFields">
-  <h1> Hoe lan is een chinees?</h1>
+
+{{>editQuistionAsked}}
+
+<div class="row">
+  {{>editType}}
+</div>
+
+<div class="row">
+  <label class="control-label">Antwoorden:</label>
+  {{>editAnswers}}
+  {{>addAnswer}}
+</div>
+
 
 
 </Template>
