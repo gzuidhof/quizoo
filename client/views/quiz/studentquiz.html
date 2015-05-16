@@ -1,7 +1,27 @@
-<template name="studentQuisedfz">
+<template name="studentQuiz">
 
   <div class="row">
-    {{>answerButtons}}
+      {{>quizTitle}}
   </div>
 
+  {{#with getCurrentQuestion quizInstance}}
+  <div class="row">
+        {{>questionBoxes}}
+  </div>
+  <div class="row">
+    {{#if equals ../quizInstance.status 3}}
+      {{#each answers}}
+            {{#if correct}}
+              {{>answerOption value=value color="green"}}
+            {{else}}
+              {{>answerOption value=value color="red"}}
+            {{/if}}
+      {{/each}}
+    {{else}}
+      {{#each answers}}
+            {{>answerOption value=value color="blue" }}
+      {{/each}}
+    {{/if}}
+  </div>
+  {{/with}}
 </template>
