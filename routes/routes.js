@@ -58,11 +58,11 @@ Router.route('/teacher/editquiz/:_id', function() {
   this.render('editQuiz', {data: {quiz:quiz, questions:questions}});
 });
 
-Router.route('/teacher/quiz', {
-  layoutTemplate: 'base',
-  action: function () {
-    this.render('teacherQuiz');
-  }
+Router.route('/teacher/quiz', function() {
+  var quizInstance = QuizInstances.findOne();
+  this.layout('base'),
+  this.render('teacherQuiz',{data:{quizInstance: quizInstance}});
+
 });
 
 Router.route('/teacher/quizanswer', {

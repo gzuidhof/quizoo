@@ -11,6 +11,7 @@ Meteor.methods({
       quiz_id: quiz_id,
       createdBy: currentUserId,
       participants: [],
+      status: 0,//0 -> starting, 1-> lobby, 2 -> Question, 3-> Answer
       currentQuestionIndex : 0,
       dateCreated: now,
       dateModified: now
@@ -41,15 +42,16 @@ Meteor.methods({
   'joinQuiz': function(quizInstance_id) {
 
   },
+  'toggleAnswers': function(quizInstance_id){
+    QuizInstances.update({_id: quizInstance_id}, {$set: {status:3}});
+    console.log('Toggled show answers for quizInstance ' + quizInstance_id + '.');
 
-  'stopQuiz': function(quizInstance_id) {
-
-    var quiz = Quizzes.findOne({_id:quiz_id});
-    var name = quiz.name || "NO NAME";
-
-
-    console.log('Quiz "' + name + '" removed.');
   },
+  'nextQuestion': function(quizInstance_id){
+    QuizInstances.update({_id: quizInstance_id}, {$inc: {currentQuestionIndex:1}});
+    QuizInstances.update({_id: quizInstance_id}, {$set: {status:2}});
+    console.log('Quiz_instance ' + quizInstance_id + 'went to the next question.');
 
+  }
 
 });
