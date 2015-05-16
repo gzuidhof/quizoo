@@ -1,17 +1,28 @@
 Meteor.methods({
-  'insertStudent': function(user) {
+  'insertStudent': function(username) {
     var currentUserId = Meteor.userId();
     //Todo: Check whether teacher or not
     var now = new Date();
-    /*
+
+    Accounts.createUser({
+      username: username,
+      password : 'wachtwoord',
+      profile  : {}
+    });
+
+    var u = Meteor.users.findOne({username:username});
+    var user_id = u._id;
+
     Students.insert({
-      name: quizName,
+      user_id: user_id,
       createdBy: currentUserId,
       dateCreated: now,
-      dateModified: now,
-    });*/
+      name: "Zonder Naam",
+      points: 0,
+      powers: []
+    });
 
-    console.log('Student "' + user + '" created.');
+    console.log('Student "' + username + '" created.');
   },
 
   'removeStudent': function(student_id) {

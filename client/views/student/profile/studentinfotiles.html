@@ -1,0 +1,52 @@
+<Template name = "studentTiles">
+
+  {{> studentTile
+    value="Jart Bacobs"
+    title="Naam"
+    color="green"
+    icon="fa fa-user"}}
+
+  {{> studentTile
+    value="A3B"
+    title="Klas"
+    color="blue"
+    icon="fa fa-graduation-cap"}}
+
+  {{> studentTile
+    value=2
+    title="Teams"
+    color="red"
+    icon="fa fa-users"}}
+
+  {{> studentTile
+    value="Duzend"
+    title="Score"
+    color="orange"
+    icon="fa fa-star"}}
+
+
+</Template>
+
+
+<template name="studentTile">
+  <div class="col-lg-6 col-md-6 col-xs-12 hidden-sm hidden-xs">
+    <div class="widget">
+      <div class="widget-body">
+
+        <div class="widget-content">
+          <div class="widget-icon {{color}} pull-left" style="font-style: italic">
+            <i class="{{icon}}"></i>
+          </div>
+
+          <div class="title">
+            {{value}}
+          </div>
+
+          <div class="comment">
+            {{title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

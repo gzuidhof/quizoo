@@ -52,10 +52,8 @@ Router.route('/student/quiz/:_id?', {
 Router.route('/teacher/editquiz/:_id', function() {
 
   var quiz = Quizzes.findOne({_id: this.params._id});
-  var questions = Questions.find({quiz_id: this.params._id});
-
   this.layout('base');
-  this.render('editQuiz', {data: {quiz:quiz, questions:questions}});
+  this.render('editQuiz', {data: {quiz:quiz}});
 });
 
 Router.route('/teacher/quiz', function() {
@@ -86,6 +84,27 @@ Router.route('/user/quiz', function(){
   this.layout('base');
   this.render('studentQuiz', {data: {quizInstance : quizInstance}})
 
+});
+
+Router.route('/student/powers', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('powers');
+  }
+});
+
+Router.route('/student/quizanswer', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('answered');
+  }
+});
+
+Router.route('/profile', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('studentProfile');
+  }
 });
 
 

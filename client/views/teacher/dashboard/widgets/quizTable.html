@@ -6,26 +6,21 @@
     </div>
     <div class="widget-body no-padding">
         <div class="widget-content" style="height:298px; overflow-y: auto">
-          <table class="table table-hover table-striped hide-last">
+          <table class="table table-hover table-striped">
             <thead>
                 <tr>
                   <th>Titel</th>
                   <th>Aangepast</th>
                   <th>Aangemaakt</th>
-                  <th></th>
                 </tr>
             </thead>
 
             <tbody>
               {{#each allQuizzes}}
-                <tr>
+                <tr class="clickable">
                   <td>{{name}}</td>
                   <td>{{prettifyDate dateModified}}</td>
                   <td>{{prettifyDate dateCreated}}</td>
-                  <td>
-        						<a class="btn btn-default btn-sm dropdown-toggle" href="/teacher/editquiz/{{_id}}"><i class="fa fa-pencil"></i> Bewerken</a>
-                  </td>
-
                 </tr>
               {{/each}}
             </tbody>

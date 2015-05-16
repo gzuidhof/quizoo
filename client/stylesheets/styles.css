@@ -38,9 +38,29 @@
 
 .btn-answerbutton{
   padding: 18px 28px;
-  font-size: 22px;
+  font-size: 100px;
   line-height: normal;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.big-icon:before{
+  font-size: 500px;
+}
+
+.green-icon{
+  color: #00FF00;
+}
+
+.red-icon{
+  color: #FF0000;
+}
+
+.yellow-icon{
+  color: #FFFF00;
 }

@@ -21,7 +21,6 @@ Question: {
 
 Class: {
   _id,
-
   name: string
 }
 
