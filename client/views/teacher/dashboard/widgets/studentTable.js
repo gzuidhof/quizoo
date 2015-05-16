@@ -7,10 +7,9 @@ Template.studentTable.events({
       return false;
     }
 
-    Meteor.call('insertStudent', username);
+    var newStudent = Meteor.call('insertStudent', username);
     event.target.username.value = "";
-
+    Modal.show("userEditModal", {data: newStudent});
     return false;
   }
-
 });
