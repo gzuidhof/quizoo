@@ -2,12 +2,12 @@
 
 Quiz: {
   _id,
-
   name: string,
   createdBy: User _id,
   dateCreated: Date,
   dateModified: Date,
   dateLastUsed: Date,
+  questions: question question_id[],
 }
 
 Question: {
@@ -45,4 +45,17 @@ Team: {
   members: Student _id[]
 }
 
+LiveQuiz: {
+  _id,
+  quiz_id : Quiz_id,
+  status: Number, (0:Lobby, 1:Question, 2:PostQuestion, 3:Pause, 4:completed, 5:aborted)
+  current_question: Question_id,
+  participants: team_id[],
+}
+Answered: {
+  _id,
+  livequiz_id : LiveQuiz_id,
+  team_id : Team_id
+  student_id: Student_id
+}
 ```
