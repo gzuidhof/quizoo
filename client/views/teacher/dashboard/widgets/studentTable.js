@@ -11,5 +11,10 @@ Template.studentTable.events({
     event.target.username.value = "";
     Modal.show("userEditModal", {data: newStudent});
     return false;
+  },
+
+  'click tr': function(event) {
+    Modal.show('studentEditModal', this)
   }
+
 });

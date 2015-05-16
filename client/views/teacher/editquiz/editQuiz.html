@@ -4,9 +4,10 @@
       <div class=row>
       {{> editTitle quiz=quiz}}
       </div>
-      {{#each questions}}
+      {{#each questionsForQuiz quiz}}
+      
       <div class=row>
-        {{> editQuestion}}
+        {{> editQuestion quiz=../quiz question=this}}
       </div>
       {{/each}}
     </div>
