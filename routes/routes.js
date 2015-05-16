@@ -102,6 +102,12 @@ Router.route('/student/quizanswer', {
   }
 });
 
+Router.route('/profile', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('studentProfile');
+  }
+});
 
 
 
