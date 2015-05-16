@@ -1,0 +1,20 @@
+<Template name="answered">
+  {{> studentAnswerPage correct = false}}
+
+</Template>
+
+<Template name="studentAnswerPage">
+
+
+  {{#if correct}}
+  <center>
+    <i class = "fa fa-check-square big-icon green-icon "> </i>
+  </center>
+
+  {{else}}
+  <center>
+    <i class = "fa fa-times-circle big-icon red-icon "> </i>
+  </center>
+
+  {{/if}}
+</Template>

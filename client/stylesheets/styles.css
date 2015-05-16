@@ -44,3 +44,15 @@
   -moz-border-radius: 8px;
   border-radius: 8px;
 }
+
+.big-icon:before{
+  font-size: 500px;
+}
+
+.green-icon{
+  color: #00FF00;
+}
+
+.red-icon{
+  color: #FF0000;
+}
