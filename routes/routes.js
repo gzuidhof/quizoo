@@ -43,7 +43,6 @@ Router.route('/lobby/:_id',function() {
 });
 
 Router.route('/student/quiz/:_id?', {
-  layoutTemplate: 'base',
   action: function () {
     this.render('studentQuiz');
   }
@@ -79,14 +78,6 @@ Router.route('/teacher/dashboard', {
   }
 });
 
-Router.route('/user/quiz', function(){
-  var team = Teams.findOne({participants : Meteor.userId()})
-  var quiz = QuizInstances.findOne({participants : team._id});
-
-  this.layout('base');
-  return 'error';
-
-});
 
 
 
