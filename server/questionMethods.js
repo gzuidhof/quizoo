@@ -7,7 +7,7 @@ Meteor.methods({
     Questions.insert({
       quiz_id: quiz_id,
       text: questionText,
-      answers: [{value: 'nee', correct: true},{value: 'ja', correct: false}],
+      answers: [],
       answerType: 0,
     });
 

@@ -1,5 +1,5 @@
 Meteor.methods({
-  'createQuizInstance': function(quiz_id) {
+  'startQuiz': function(quiz_id) {
 
     //var quiz = Quizzes.findOne({_id:quiz_id});
 
@@ -11,15 +11,14 @@ Meteor.methods({
       quiz_id: quiz_id,
       createdBy: currentUserId,
       participants: [],
-      currentQuestionIndex : 0,
       dateCreated: now,
       dateModified: now
     });
 
     console.log('Quiz instance "' + quiz_id + '" started.');
   },
-  'addTeamsToQuizInstance' : function(quizInstance_id, teams){
-
+  'addTeamsToQuiz' : function(quizInstance_id, teams){
+    
     var quizInstance = QuizInstances.findOne({_id : quizInstance_id});
     if(quizInstance.participants.length > 0) {
 
@@ -38,11 +37,11 @@ Meteor.methods({
 
     }
   },
-  'joinQuiz': function(quizInstance_id) {
+  'joinQuiz': function(quiz_id) {
 
   },
 
-  'stopQuiz': function(quizInstance_id) {
+  'stopQuiz': function(quiz_id) {
 
     var quiz = Quizzes.findOne({_id:quiz_id});
     var name = quiz.name || "NO NAME";
