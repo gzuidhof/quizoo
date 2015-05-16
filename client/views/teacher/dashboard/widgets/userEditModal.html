@@ -1,4 +1,4 @@
-<template name="studentEditModal">
+<template name="userEditModal">
   <div class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -12,10 +12,12 @@
                     <p>{{name}}</p>
                     <p>{{prettifyTimestamp dateCreated}}</p>
                     <p>{{prettifyDate dateLastLogin}}</p> <!-- Not implemented yet -->
-
                 </div>
 
                 <div class="modal-footer">
+                    <div class="pull-left">
+                      <button type="button" class="btn btn-danger btn-link remove-user" style="color: #c11"><i class="fa fa-remove"></i></button>
+                    </div>
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Sluiten</button>
                     <button type="button" class="btn btn-primary"> Wijzigingen Opslaan</button>
                 </div>
