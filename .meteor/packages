@@ -12,3 +12,4 @@ iron:router
 accounts-base
 tmeasday:presence
 mrt:moment
+mizzao:bootboxjs
