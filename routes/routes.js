@@ -38,7 +38,6 @@ Router.route('/lobby', {
 });
 
 Router.route('/student/quiz/:_id?', {
-  layoutTemplate: 'base',
   action: function () {
     this.render('studentQuiz');
   }

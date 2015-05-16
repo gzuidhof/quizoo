@@ -35,3 +35,12 @@
     border-color: #D9534F;
     background: #Fee;
 }
+
+.btn-answerbutton{
+  padding: 18px 28px;
+  font-size: 22px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
