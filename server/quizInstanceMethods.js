@@ -9,29 +9,33 @@ Meteor.methods({
 
     QuizInstances.insert({
       quiz_id: quiz_id,
-      //createdBy: currentUserId,
+      createdBy: currentUserId,
+      participants: [],
       dateCreated: now,
       dateModified: now
     });
 
     console.log('Quiz instance "' + quiz_id + '" started.');
   },
-  'setTeams' : function(quizInstance_id, teams){
+  'addTeamsToQuiz' : function(quizInstance_id, teams){
     
-    if(team){
-      if(team.participants.indexOf(user_id) == -1)
-      {
-        Teams.update({_id: team_id}, { $push: { participants: user_id })
-      }
-    }
-    else {
-      Teams.insert({
-        participants: [user_id],
-        createdBy: currentUserId,
-        dateCreated: now
+    var quizInstance = QuizInstances.findOne({_id : quizInstance_id});
+    if(quizInstance.participants.length > 0) {
+
+      teams.forEach(function(team){
+
+        if(quizInstance.participants.indexOf(team) == -1) {
+
+          QuizInstances.update({_id: team_id}, { $push: { participants: team }});
+          console.log('Added "' + team_id + '" to quiz' + quiz_id + ".");
+        }
       });
     }
-    QuizInstances.update({_id: quizInstance_id}, {$set: {participants:teams}});
+    else {
+      QuizInstances.update({_id: quizInstance_id}, {$set: {participants:teams}});
+      console.log('Added "' + teams + '" to quiz' + quiz_id + ".");
+
+    }
   },
   'joinQuiz': function(quiz_id) {
 
