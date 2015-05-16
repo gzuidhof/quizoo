@@ -4,15 +4,24 @@ Template.editQuizControls.events({
     var quiz = template.data.quiz;
 
     if (!quiz) {
-      console.error("No quiz in context!")
+      console.error("No quiz in context!");
     }
     else {
-      Meteor.call('removeQuiz', quiz._id);
+
+      var closure = function() {
+        Meteor.call('removeQuiz', quiz._id);
+        Router.go('/teacher/dashboard');
+      }
+      var context = {
+        title: "Oh ja",
+        text: "Weet je zeker dat je de quiz wilt verwijderen?",
+        callback: closure,
+      }
+
+      Modal.show('confirmRemoveModal', context)
     }
 
-    Router.go('/teacher/dashboard');
     return false;
-
   }
 
 });

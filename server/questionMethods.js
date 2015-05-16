@@ -9,7 +9,7 @@ Meteor.methods({
 
     var id = Questions.insert({
       text: questionText,
-      answers: [{value: 'nee', correct: true},{value: 'ja', correct: false}],
+      answers: [{value: 'nee', correct: false},{value: 'ja', correct: false},{value: 'nakken', correct: true},{value: 'haten', correct: false}],
       answerType: 0,
     });
 

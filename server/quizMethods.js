@@ -40,5 +40,4 @@ Meteor.methods({
       console.log('Quiz "' + oldName + '" name changed to "' + newName + '".');
     }
 
-
 });
