@@ -95,6 +95,13 @@ Router.route('/student/powers', {
   }
 });
 
+Router.route('/student/quizanswer', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('answered');
+  }
+});
+
 
 
 
