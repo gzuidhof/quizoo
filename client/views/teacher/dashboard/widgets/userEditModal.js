@@ -3,16 +3,11 @@ Template.userEditModal.events({
     event.preventDefault();
     var user_id = this.user_id;
 
-    console.log("asdf");
-
-
     var context = {
       title: "Weet je het echt heel zeker?",
       text: "Dit heeft grote consequenties..\n Het gehele gebruikersaccount wordt verwijderd!",
 
-
-
-      callback: function() {
+      callback: function() { //Second modal
         context2 = {
           title: "Niet komen huilen bij de developers",
           text: "Nog steeds? Dit kan niet ongedaan gemaakt worden!",
@@ -20,7 +15,6 @@ Template.userEditModal.events({
             Modal.hide();
             Meteor.call('removeUser', user_id);
           }
-
         }
         Modal.show('confirmRemoveModal', context2);
       }

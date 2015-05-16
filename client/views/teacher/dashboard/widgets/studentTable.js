@@ -14,7 +14,7 @@ Template.studentTable.events({
   },
 
   'click tr': function(event) {
-    Modal.show('userEditModal', this)
+    Modal.show('userEditModal', this);
   }
 
 });
