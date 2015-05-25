@@ -12,17 +12,16 @@ Template.editTitle.events({
     //console.log(template.data.quiz._id);
     Meteor.call('updateQuizName', quiz_id, quizName);
 
-    Session.set('isEditingQuiz', false);
+    Session.set('isEditingQuizName', false);
     return false;
   },
+
   'click .click-to-edit': function(event, template) {
     event.preventDefault();
 
-    Session.set('isEditingQuiz', true);
+    Session.set('isEditingQuizName', true);
     return false;
   }
-
-
 
 });
 
@@ -31,6 +30,6 @@ Template.editTitle.events({
 
 Template.editTitle.helpers({
   isEditingQuiz: function() {
-    return Session.get('isEditingQuiz');
+    return Session.get('isEditingQuizName');
   }
 });
