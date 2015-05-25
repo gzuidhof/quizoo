@@ -1,12 +1,12 @@
 <template name="studentlist">
-  <div class="col-lg-3 col-md-6 col-xs-12 hidden-sm hidden-xs">
+
+  {{#each allStudents}}
+  <div class="col-lg-2 col-md-6 col-xs-12 hidden-sm hidden-xs">
     <div class="widget">
       <div class="widget-body">
-        {{#each allStudents}}
+
         <div class="widget-content clickable">
-          <div class="widget-icon {{color}} pull-left" style="font-style: italic">
-            <i class="fa fa-users"></i>
-          </div>
+
 
           <div class="title">
             {{name}}
@@ -16,8 +16,9 @@
             {{usernameOfId user_id}}
           </div>
         </div>
-        {{/each}}
+
       </div>
     </div>
   </div>
+  {{/each}}
 </template>
