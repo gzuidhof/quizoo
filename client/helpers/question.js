@@ -16,6 +16,5 @@ Template.registerHelper('questionsForQuiz', function(quiz) {
     if (question)
       questions.push(question);
   });
-
   return questions;
 });

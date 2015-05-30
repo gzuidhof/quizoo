@@ -11,13 +11,18 @@ Meteor.methods({
       quiz_id: quiz_id,
       createdBy: currentUserId,
       participants: [],
-      status: 0,//0 -> starting, 1-> lobby, 2 -> Question, 3-> Answer
+      status: 0,//0 -> starting, 1-> lobby, 2 -> Question, 3-> Answer, 4-> finished, 5-> aborted
       currentQuestionIndex : 0,
       dateCreated: now,
       dateModified: now
     });
 
     console.log('Quiz instance "' + quiz_id + '" started.');
+  },
+  'stopQuizInstance': function(quizInstance_id) {
+
+    QuizInstances.update({_id: quizInstance_id}, {$set: {status:5}});
+    console.log('Quiz_instance ' + quizInstance_id + 'has been aborted.');
   },
   'addTeamsToQuizInstance' : function(quizInstance_id, teams){
 
