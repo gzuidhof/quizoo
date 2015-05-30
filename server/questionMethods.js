@@ -42,36 +42,33 @@ Meteor.methods({
   },
 
   'moveQuestion': function(quiz_id, question_id, direction) { //true for up, false for down
-      var quiz = Quizzes.find({_id: quiz_id});
+      var quiz = Quizzes.findOne({_id: quiz_id});
       var questionList = quiz.questions;
 
       var index = questionList.indexOf(question_id);
 
       var temp = questionList[index];
 
+
       if (direction===true) {
         if (index === 0) {
           return;
         }
-
-
+        questionList[index] = questionList[index-1];
+        questionList[index-1] = temp;
       }
 
       else {
         if (index === questionList.length) {
           return;
         }
+        questionList[index] = questionList[index+1];
+        questionList[index+1] = temp;
       }
-        || index === questionList.length && direction===false) {
-        return;
-      }
 
-
-
-
-      questionList[index]
-
-  }
+      Quizzes.update({_id: quiz_id}, {$set: {questions: questionList}});
+      console.log('Changed question order ' + (direction? 'up':'down')+'.');
+  },
 
 
 

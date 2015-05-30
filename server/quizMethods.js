@@ -38,6 +38,6 @@ Meteor.methods({
       Quizzes.update(quiz_id, {$set: { name: newName, dateModified: now}});
 
       console.log('Quiz "' + oldName + '" name changed to "' + newName + '".');
-    }
+    },
 
 });
