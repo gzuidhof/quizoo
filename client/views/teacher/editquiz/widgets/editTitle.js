@@ -25,6 +25,10 @@ Template.editTitle.events({
 
 });
 
+Template.editTitle.created = function() {
+  Session.set('isEditingQuizName', false);
+}
+
 
 
 
