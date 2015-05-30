@@ -72,8 +72,4 @@ Meteor.methods({
 
     console.log('Removed answer option from question');
   },
-
-
-
-
 });

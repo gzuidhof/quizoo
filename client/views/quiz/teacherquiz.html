@@ -17,6 +17,7 @@
               {{> teacherQuizQuestions}}
             {{/if}}
         	</div>
+
         {{/with}}
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" style="width:{{percentageOfQuizCompleted quizInstance}}%; min-width:4em">
@@ -24,73 +25,4 @@
           </div>
         </div>
     {{/if}}
-</template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<template name="teacherQuizAnswers">
-  <div class="row">
-    {{#each answers}}
-          {{#if correct}}
-            {{>answerOption value=value color="green"}}
-          {{else}}
-            {{>answerOption value=value color="red"}}
-          {{/if}}
-    {{/each}}
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 text-center pull-right">
-        <div class="btn-group pull-right">
-              <a class="btn btn-lg btn-primary next-question" role="button" >Volgende vraag</a>
-        </div>
-    </div>
-  </div>
-</template>
-
-<template name="teacherQuizQuestions">
-  <div class="row">
-    {{#each answers}}
-          {{>answerOption value=value color="blue" }}
-    {{/each}}
-  </div>
-  <div class="row">
-    <div class="col-lg-12 text-center pull-right">
-      <div class="btn-group pull-right">
-            <a  class="btn btn-lg btn-primary show-answer" role="button" >Antwoord</a>
-      </div>
-    </div>
-  </div>
 </template>

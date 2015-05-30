@@ -103,6 +103,12 @@ Router.route('/teacher/teams', {
 });
 
 
+Router.route('/student/fancypants', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('answered');
+  }
+});
 
 
 // catchall route

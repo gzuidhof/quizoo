@@ -64,3 +64,6 @@
 .yellow-icon{
   color: #FFFF00;
 }
+.answer-selected {
+  background: #10ADED   !important;
+}
