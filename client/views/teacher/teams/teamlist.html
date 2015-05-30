@@ -1,0 +1,52 @@
+<template name ="teamLists">
+
+
+  {{>teamList teamName="nakken"}}
+
+  {{>teamList teamName="nakarta"}}
+
+  {{>teamList teamName="nakmanië"}}
+
+
+
+
+</template>
+
+
+
+
+
+
+<template name="teamList">
+  <div class="col-lg-3 col-md-6 col-xs-12">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">{{teamName}}</div>
+
+      <div class="list-group">
+        <a href="#" class="list-group-item clearfix">Pom
+            <span class="pull-right button-group">
+              <button type="button pull-right" class="btn btn-xs btn-danger outline"><i class="fa fa-remove"></i></button>
+            </span>
+        </a>
+        <a href="#" class="list-group-item clearfix">Nuc
+            <span class="pull-right button-group">
+              <button type="button pull-right" class="btn btn-xs btn-danger outline"><i class="fa fa-remove"></i></button>
+            </span>
+        </a>
+        <a href="#" class="list-group-item clearfix">Heywel
+            <span class="pull-right button-group">
+              <button type="button pull-right" class="btn btn-xs btn-danger outline"><i class="fa fa-remove"></i></button>
+            </span>
+        </a>
+        <a href="#" class="list-group-item clearfix">Kwiedo
+            <span class="pull-right button-group">
+              <button type="button pull-right" class="btn btn-xs btn-danger outline"><i class="fa fa-remove"></i></button>
+            </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</template>
