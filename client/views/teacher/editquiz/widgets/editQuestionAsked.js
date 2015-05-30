@@ -12,7 +12,6 @@ Template.editQuestionAsked.events({
     Meteor.call('updateQuestion', question_id, {text:questionAsked});
 
     return false;
-
   }
 
 });

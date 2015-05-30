@@ -37,9 +37,43 @@ Meteor.methods({
   'updateQuestion': function(question_id, update) {
     var currentUserId = Meteor.userId();
     //Todo: Check whether teacher or not
-    Questions.update({_id: question_id}, update);
+    Questions.update({_id: question_id}, {$set: update});
     console.log('Question "' + question_id + '" updated.');
   },
+
+  'moveQuestion': function(quiz_id, question_id, direction) { //true for up, false for down
+      var quiz = Quizzes.find({_id: quiz_id});
+      var questionList = quiz.questions;
+
+      var index = questionList.indexOf(question_id);
+
+      var temp = questionList[index];
+
+      if (direction===true) {
+        if (index === 0) {
+          return;
+        }
+
+
+      }
+
+      else {
+        if (index === questionList.length) {
+          return;
+        }
+      }
+        || index === questionList.length && direction===false) {
+        return;
+      }
+
+
+
+
+      questionList[index]
+
+  }
+
+
 
   'insertAnswer': function(question_id, value) {
     var currentUserId = Meteor.userId();
