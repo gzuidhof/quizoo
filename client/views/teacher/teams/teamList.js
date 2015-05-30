@@ -8,7 +8,8 @@ Template.teamList.events({
   'click .select-team': function(event, template) {
     var stud_id = Session.get("studentSelected")
     if(stud_id){
-      Meteor.call("addUserToTeam", stud_id, this._id)
+      Meteor.call("addUserToTeam", stud_id, this._id);
+      Session.set("studentSelected", undefined);
     }
   },
 
@@ -16,8 +17,10 @@ Template.teamList.events({
   'click .remove-member': function(event, template) {
 
 
-    var stud_id = this._id
-    Meteor.call("removeUserFromTeam", stud_id)
+    var team_id = this.teamInfo._id;
+    var stud_id = this.memberInfo._id;
+    Meteor.call("removeUserFromTeam", stud_id, team_id);
+
 
   },
 });
