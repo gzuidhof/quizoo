@@ -8,7 +8,11 @@
 
 <div class="row">
   <label class="control-label">Antwoorden:</label>
-  {{>editAnswers}}
+
+  {{#each question.answers}}
+    {{>editAnswer}}  
+  {{/each}}
+
   {{>addAnswer}}
 </div>
 

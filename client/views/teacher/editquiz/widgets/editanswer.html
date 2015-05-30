@@ -1,36 +1,14 @@
-<Template name="editAnswers">
-  {{> editAwnser
-    answer="terri lan"
-    correct=false
-  }}
-
-  {{> editAwnser
-    answer="Very lan"
-    correct=false
-  }}
-
-  {{> editAwnser
-    answer="yes indeed"
-    correct=false
-  }}
-
-  {{> editAwnser
-    answer="not lan"
-    correct=false
-  }}
 
 
-</Template>
-
-<Template name = "editAwnser">
+<template name = "editAnswer">
 
     <div class="row">
       <div class="col-lg-11">
-        <input class="form-control"  type="text" value="{{answer}}"> <!--Het antwoord staat in the tekstvak, pas die tekst aan om het antwoor aan te passen  -->
+        <input class="form-control"  type="text" value="{{value}}"> <!--Het antwoord staat in the tekstvak, pas die tekst aan om het antwoor aan te passen  -->
       </div>
       <div class="col-lg-1">
         <button type="button" class="btn btn-sm btn-danger outline remove-quiz"><i class="fa fa-remove"></i></button>
       </div>
     </div>
 
-</Template>
+</template>
