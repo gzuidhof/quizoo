@@ -8,6 +8,7 @@ Meteor.methods({
       if(team.members.indexOf(user_id) == -1)
       {
         Teams.update({_id: team_id}, { $push: { members: user_id }})
+        console.log("Added user to " + team.name);
       }
     }
     else {
@@ -16,6 +17,28 @@ Meteor.methods({
 
     }
   },
+  'removeUserFromTeam' : function(user_id, team_id){
+    var currentUserId = Meteor.userId();
+    var team = Teams.findOne({_id: team_id});
+    var now = new Date();
+
+    if(team){
+      if(team.members.indexOf(user_id) == -1)
+      {
+        Teams.update({_id: team_id}, { $pop: { members: user_id }})
+        console.log("Removed user from " + team.name);
+      }
+      else {
+        console.error("Tried to remove user from team (s)he's not even in!");
+      }
+    }
+    else {
+      console.error("Could not find team to remove user from!")
+    }
+  },
+
+
+
 
   'insertTeam': function(teamName) {
     var currentUserId = Meteor.userId();
