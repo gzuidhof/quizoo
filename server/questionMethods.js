@@ -57,8 +57,8 @@ Meteor.methods({
     var now = new Date();
 
 
-    Questions.update({_id: question_id, answers._id: answer_id},
-      {$set: {answers.$: value}});
+    Questions.update({_id: question_id, 'answers._id': answer_id},
+      {$set: {'answers.$': value}});
 
     console.log('Answer updated: "' + value + '"');
   },
