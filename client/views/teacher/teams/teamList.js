@@ -7,10 +7,18 @@ Template.teamList.events({
   },
   'click .select-team': function(event, template) {
     var stud_id = Session.get("studentSelected")
-    if(stud_id){
-      Meteor.call("addUserToTeam", stud_id, this._id);
+    var prev_team_id = Session.get("teamSelected")
 
+    if(stud_id){
+
+      if(prev_team_id){
+        Meteor.call("removeUserFromTeam", stud_id, prev_team_id);
+        Session.set("teamSelected", undefined);
+      }
+      Meteor.call("addUserToTeam", stud_id, this._id);
       Session.set("studentSelected", undefined);
+
+
     }
   },
   'click .remove-member': function(event, template) {
@@ -19,16 +27,19 @@ Template.teamList.events({
     var team_id = this.teamInfo._id;
     var stud_id = this.memberInfo._id;
     Meteor.call("removeUserFromTeam", stud_id, team_id);
-
+    Session.set("studentSelected", undefined);
+    Session.set("teamSelected", undefined);
 
   },
   'click .select-student-in-team': function(event, template) {
 
     if(Session.get("studentSelected") == this.memberInfo._id){
       Session.set("studentSelected", undefined);
+      Session.set("teamSelected", undefined);
     }
     else{
       Session.set("studentSelected", this.memberInfo._id);
+      Session.set("teamSelected", this.teamInfo._id);
     }
   },
 });
