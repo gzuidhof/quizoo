@@ -95,6 +95,13 @@ Router.route('/teacher/quizend', {
   }
 });
 
+Router.route('/teacher/teams', {
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('teams');
+  }
+});
+
 
 
 
