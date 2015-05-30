@@ -5,17 +5,15 @@ Meteor.methods({
     var now = new Date();
 
     if(team){
-      if(team.participants.indexOf(user_id) == -1)
+      if(team.members.indexOf(user_id) == -1)
       {
-        Teams.update({_id: team_id}, { $push: { participants: user_id }})
+        Teams.update({_id: team_id}, { $push: { members: user_id }})
       }
     }
     else {
-      Teams.insert({
-        participants: [user_id],
-        createdBy: currentUserId,
-        dateCreated: now
-      });
+      console.error("try to add user to undefined team")
+
+
     }
   },
 

@@ -4,7 +4,7 @@
   <div class="col-lg-3 col-md-6 col-xs-12">
 
     <div class="panel panel-default">
-      <div class="panel-heading">{{name}}
+      <div class="panel-heading select-team">{{name}}
 
         <span class="pull-right button-group">
           <button type="button pull-right" class="btn btn-xs btn-default outline"><i class="fa fa-pencil"></i></button>
@@ -12,10 +12,10 @@
       </span></div>
 
       <div class="list-group">
-        {{#each student}}
-        <a href="#" class="list-group-item clearfix">{{usernameOfId user_id}}
+        {{#each membersOfTeam this}}
+        <a href="#" class="list-group-item clearfix">{{name}}
             <span class="pull-right button-group">
-              <button type="button pull-right" class="btn btn-xs btn-danger outline"><i class="fa fa-remove"></i></button>
+              <button type="button pull-right" class="btn btn-xs btn-danger outline remove-member"><i class="fa fa-remove"></i></button>
             </span>
         </a>
         {{/each}}
