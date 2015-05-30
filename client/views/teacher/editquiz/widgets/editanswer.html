@@ -1,14 +1,16 @@
-
-
 <template name = "editAnswer">
 
     <div class="row">
-      <div class="col-lg-11">
-        <input class="form-control"  type="text" value="{{value}}"> <!--Het antwoord staat in the tekstvak, pas die tekst aan om het antwoor aan te passen  -->
-      </div>
+      <form class="from-horizontal" role = "form">
+        <div class="col-lg-11">
+          <input class="form-control" name="{{answer._id}}" type="text" value="{{answer.value}}" >
+        </div>
+      </form>
+
       <div class="col-lg-1">
         <button type="button" class="btn btn-sm btn-danger outline remove-quiz"><i class="fa fa-remove"></i></button>
       </div>
+
     </div>
 
 </template>

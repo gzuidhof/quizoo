@@ -1,4 +1,4 @@
-Template.editQuestion.events({
+Template.editQuestionFields.events({
   'click .remove-question': function(event, template) {
     event.preventDefault();
     //var question = template.data;
@@ -9,6 +9,13 @@ Template.editQuestion.events({
 
     return false;
 
+  },
+
+  'submit form': function(event, template){
+    event.preventDefault();
+    console.log(event);
+
+    return false;
   }
 
 });

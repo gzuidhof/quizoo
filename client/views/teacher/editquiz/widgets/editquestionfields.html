@@ -1,21 +1,37 @@
-<Template name="editQuestionFields">
+<template name="editQuestionFields">
 
-{{>editQuestionAsked}}
+  <form class="form-control" role = "form">
+    {{>editQuestionAsked}}
 
-<div class="row">
-  {{>editType}}
-</div>
+    <div class="row">
+      {{>editType}}
+    </div>
 
-<div class="row">
-  <label class="control-label">Antwoorden:</label>
+    <div class="row">
+      <label class="control-label">Antwoorden:</label>
 
-  {{#each question.answers}}
-    {{>editAnswer}}  
-  {{/each}}
+      {{#each question.answers}}
+        {{>editAnswer
+          question_id=../question._id
+          answer = this
+        }}
+      {{/each}}
 
-  {{>addAnswer}}
-</div>
+      {{>addAnswer}}
+
+    </div>
+
+    <div class="widget-footer">
+        <button type="button" class="btn btn-sm btn-danger outline remove-question"><i class="fa fa-remove"></i> Verwijderen</button>
+      <div class="pull-right">
+        {{#if true}}
+        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-floppy-o"></i> Wijzigingen Opslaan</button>
+        {{else}}
+        <button type="button" class="btn btn-default btn-sm disabled"><i class="fa fa-check"></i> Opgeslagen!</button>
+        {{/if}}
+      </div>
+    </div>
+</form>
 
 
-
-</Template>
+</template>
