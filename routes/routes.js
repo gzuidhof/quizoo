@@ -20,7 +20,6 @@ Router.route('/login/', {
 // for all routes but login
 Router.onBeforeAction(function () {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      console.log("awrooooo");
         this.redirect('/login');
     } else {
         // required by Iron to process the route handler
