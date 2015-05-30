@@ -4,19 +4,14 @@
 
 
     <div class="panel panel-default">
+
       <div class="panel-heading">Leerlingen</div>
 
       <div class="list-group">
         {{#each allStudents}}
-        {{#if isStudentNotAssigned _id}}
-
-          {{#if isStudentSelected _id}}
-            <a href="#" class="list-group-item list-group-item-success select-student">{{name}}</a>
-          {{else}}
-            <a href="#" class="list-group-item select-student">{{name}}</a>
+          {{#if isStudentNotAssigned _id}}
+            <a href="#" class="list-group-item {{#if isStudentSelected _id}} list-group-item-success {{/if}} select-student">{{name}}</a>
           {{/if}}
-
-        {{/if}}  
         {{/each}}
       </div>
     </div>

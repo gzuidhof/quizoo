@@ -11,7 +11,7 @@ Template.registerHelper('isAStudentSelected', function() {
 });
 
 Template.registerHelper('isStudentNotAssigned', function(student_id) {
-  inATeam = Teams.findOne({members: {$in: [student_id]}});
+  var inATeam = Teams.findOne({members: {$in: [student_id]}});
   if(inATeam){
     return false;
   }
