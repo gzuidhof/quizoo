@@ -64,6 +64,16 @@ Meteor.methods({
   },
 
 
+  'removeAnswer' : function(question_id, answer_id){
+    var currentUserId = Meteor.userId();
+    var now = new Date();
+
+    Questions.update({_id: question_id}, { $pop: { answers: {_id: answer_id} }});
+
+    console.log('Removed answer option from question');
+  },
+
+
 
 
 });
