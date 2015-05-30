@@ -56,7 +56,6 @@ Meteor.methods({
     QuizInstances.update({_id: quizInstance_id}, {$inc: {currentQuestionIndex:1}});
     QuizInstances.update({_id: quizInstance_id}, {$set: {status:2}});
     console.log('Quiz_instance ' + quizInstance_id + 'went to the next question.');
-
   }
 
 });
