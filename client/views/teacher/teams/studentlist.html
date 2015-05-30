@@ -1,24 +1,18 @@
-<template name="studentlist">
-
-  {{#each allStudents}}
-  <div class="col-lg-2 col-md-6 col-xs-12 hidden-sm hidden-xs">
-    <div class="widget">
-      <div class="widget-body">
-
-        <div class="widget-content clickable">
+<template name="studentList">
 
 
-          <div class="title">
-            {{name}}
-          </div>
+  
 
-          <div class="comment">
-            {{usernameOfId user_id}}
-          </div>
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Leerlingen</div>
 
+      <div class="list-group">
+        {{#each allStudents}}
+        <a href="#" class="list-group-item">{{name}}</a>
+        {{/each}}
       </div>
     </div>
-  </div>
-  {{/each}}
+
+
+
 </template>
