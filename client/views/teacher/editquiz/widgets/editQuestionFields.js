@@ -16,7 +16,7 @@ Template.editQuestionFields.events({
 
     var questionText = event.target.questionAsked.value;
     var question_id = template.data.question._id;
-    // Meteor.call('updateQuestion', question_id, {text:questionText})
+    Meteor.call('updateQuestion', question_id, {text:questionText})
 
     var answers = template.data.question.answers;
     console.log(answers)
@@ -24,8 +24,9 @@ Template.editQuestionFields.events({
       var answer_id = answers[i]._id;
       console.log(answer_id)
       var answer = event.target[answer_id].value;
-      console.log(answer)
-      Meteor.call('updateAnswer', question_id, answer_id, {value:answer});
+      var ifCorrect = answers[i].correct;
+      console.log(answer);
+      Meteor.call('updateAnswer', question_id, answer_id, {value:answer, _id:answer_id, correct:ifCorrect});
     }
 
 
