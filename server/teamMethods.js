@@ -43,7 +43,7 @@ Meteor.methods({
 
     Teams.remove({_id: team_id});
 
-    console.log('Team "' + teamName + '" removed.');
+    console.log('Team "' + team_id + '" removed.');
   },
 
 });
