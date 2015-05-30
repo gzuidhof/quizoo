@@ -13,7 +13,21 @@ Template.editQuestionFields.events({
 
   'submit form': function(event, template){
     event.preventDefault();
-    console.log(event);
+
+    var questionText = event.target.questionAsked.value;
+    var question_id = template.data.question._id;
+    // Meteor.call('updateQuestion', question_id, {text:questionText})
+
+    var answers = template.data.question.answers;
+    console.log(answers)
+    for (var i = 0 ; i < answers.length ; i++ ){
+      var answer_id = answers[i]._id;
+      console.log(answer_id)
+      var answer = event.target[answer_id].value;
+      console.log(answer)
+      Meteor.call('updateAnswer', question_id, answer_id, {value:answer});
+    }
+
 
     return false;
   }
