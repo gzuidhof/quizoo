@@ -10,8 +10,9 @@
 
   <div class="row">
 
-    {{>endMessage
-      quizname = "Best quiz name EUW"}}
+    {{#each getQuizScore quizInstance._id}}
+      hallo?
+    {{/each}}
 
   </div>
 
