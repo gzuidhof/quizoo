@@ -37,4 +37,13 @@ Meteor.methods({
     console.log('Team "' + teamName + '" created.');
   },
 
+  'removeTeam': function(team_id) {
+    var currentUserId = Meteor.userId();
+    //Todo: Check whether teacher or not
+
+    Teams.remove({_id: team_id});
+
+    console.log('Team "' + teamName + '" removed.');
+  },
+
 });
