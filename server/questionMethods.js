@@ -50,18 +50,18 @@ Meteor.methods({
 
     console.log('Answer "' + value + '" added.');
   },
-/*
-  'updateAnswer': function(answer_id, value) {
+
+  'updateAnswer': function(question_id, answer_id, value) {
     var currentUserId = Meteor.userId();
     //Todo: Check whether teacher or not
     var now = new Date();
 
-    var newAnswer = {value: value, correct: false, _id: Random.id()}
-    var question = Questions.update({_id: question_id}, {$push{answers: newAnswer}});
 
-    Quizzes.update({_id: quiz_id}, {$push: {questions: id}});
-    console.log('Answer "' + value + '" added.');
-  },*/
+    Questions.update({_id: question_id, answers._id: answer_id},
+      {$set: {answers.$: value}});
+
+    console.log('Answer updated: "' + value + '"');
+  },
 
 
 
