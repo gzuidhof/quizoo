@@ -6,22 +6,30 @@
 
   {{#with getCurrentQuestion quizInstance}}
   <div class="row">
-        {{>questionBoxes}}
-  </div>
-  <div class="row">
     {{#if equals ../quizInstance.status 3}}
-      {{#each answers}}
-            {{#if correct}}
-              {{>answerOption value=value color="green"}}
-            {{else}}
-              {{>answerOption value=value color="red"}}
-            {{/if}}
-      {{/each}}
+      {{#if answeredCorrectly ../quizInstance._id}}
+        {{>answeredFeedback correct=true}}
+      {{else}}
+        {{>answeredFeedback correct=false}}
+      {{/if}}
     {{else}}
-      {{#each answers}}
-            {{>answerOption value=value color="blue" }}
-      {{/each}}
+      {{>studentQuizQuestions}}
     {{/if}}
   </div>
   {{/with}}
+</template>
+
+<template name="studentQuizQuestions">
+  <div class="row">
+        {{>questionBoxes}}
+  </div>
+
+  {{#each answers}}
+    {{#if isSelectedAnswer ../../quizInstance._id _id}}
+      {{>studentAnswerOption _id=_id value=value color="answer-selected" quizInstance=../../quizInstance}}
+    {{else}}
+        {{>studentAnswerOption _id=_id value=value quizInstance=../../quizInstance}}
+    {{/if}}
+
+  {{/each}}
 </template>

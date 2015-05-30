@@ -6,22 +6,29 @@
                 <div class="modal-header">
                     <h4 class="modal-title"><i class="fa fa-gear"></i> Gebruiker <b>{{usernameOfId user_id}}</b> aanpassen</h4>
                 </div>
+                <form>
+                  <div class="modal-body">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon2">Naam leerling</span>
+                        <input type="text" class="form-control" name="nameField" value={{name}}>
+                      </div>
 
-                <div class="modal-body">
-                    <p>Username: {{usernameOfId user_id}}</p>
-                    <p>Name: {{name}}</p>
-                    <p>Aangemaakt: {{prettifyTimestamp dateCreated}}</p>
-                    <p>Laatst online: {{prettifyDate dateLastLogin}}</p> <!-- Not implemented yet -->
-                </div>
+                      <br>
+                      <br>
+                      <br>
 
-                <div class="modal-footer">
-                    <div class="pull-left">
-                      <button type="button" class="btn btn-danger btn-link remove-user" style="color: #c11"><i class="fa fa-remove"></i></button>
-                    </div>
-                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary"> Wijzigingen Opslaan</button>
-                </div>
+                      <p>Aangemaakt: {{prettifyTimestamp dateCreated}}</p>
+                      <p>Laatst online: {{prettifyDate dateLastLogin}}</p> <!-- Not implemented yet -->
+                  </div>
 
+                  <div class="modal-footer">
+                      <div class="pull-left">
+                        <button type="button" class="btn btn-danger btn-link remove-user" style="color: #c11"><i class="fa fa-remove"></i></button>
+                      </div>
+                      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Sluiten</button>
+                      <button type="submit" class="btn btn-primary"> Wijzigingen Opslaan</button>
+                  </div>
+                </form>
             </div>
         </div>
     </div>

@@ -1,0 +1,14 @@
+<template name="teacherQuizQuestions">
+  <div class="row">
+    {{#each answers}}
+          {{>answerOption value=value color="blue" }}
+    {{/each}}
+  </div>
+  <div class="row">
+    <div class="col-lg-12 text-center pull-right">
+      <div class="btn-group pull-right">
+            <a  class="btn btn-lg btn-primary show-answer" role="button" >Antwoord</a>
+      </div>
+    </div>
+  </div>
+</template>

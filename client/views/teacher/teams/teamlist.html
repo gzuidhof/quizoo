@@ -1,10 +1,10 @@
 <template name="teamList">
 
 {{#each allTeams}}
-  <div class="col-lg-3 col-md-6 col-xs-12">
+  <div class="col-lg-4 col-md-6 col-xs-12">
 
     <div class="panel panel-default">
-      <div class="panel-heading select-team">{{name}}
+      <div class="panel-heading select-team">{{name}} {{#if isAStudentSelected}} <span class="clickable" style="color:#808080">(klik om toe te voegen)</span> {{/if}}
 
         <span class="pull-right button-group">
           <button type="button pull-right" class="btn btn-xs btn-default outline"><i class="fa fa-pencil"></i></button>
@@ -13,15 +13,21 @@
 
       <div class="list-group">
         {{#each membersOfTeam this}}
-        <a href="#" class="list-group-item clearfix">{{name}}
-            <span class="pull-right button-group">
-              <button type="button pull-right" class="btn btn-xs btn-danger outline remove-member"><i class="fa fa-remove"></i></button>
-            </span>
-        </a>
+        {{>memberElement teamInfo = ..
+                         memberInfo = this}}
         {{/each}}
       </div>
     </div>
 
   </div>
 {{/each}}
+</template>
+
+
+<template name = "memberElement">
+  <a href="#" class="list-group-item clearfix">{{memberInfo.name}}
+      <span class="pull-right button-group">
+        <button type="button pull-right" class="btn btn-xs btn-danger outline remove-member"><i class="fa fa-remove"></i></button>
+      </span>
+  </a>
 </template>

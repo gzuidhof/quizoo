@@ -41,4 +41,11 @@ Meteor.methods({
 
     console.log('Student "' + name + '" removed.');
   },
+  'updateStudent': function(student_id, value) {
+    //TODO Input validation!
+    var name = Students.update({_id:student_id}, {$set: value});
+    console.log('Student "' + student_id + '" updated.');
+  },
+
+
 });

@@ -23,7 +23,7 @@ Meteor.methods({
     var now = new Date();
 
     if(team){
-      if(team.members.indexOf(user_id) == -1)
+      if(team.members.indexOf(user_id)>=0)
       {
         Teams.update({_id: team_id}, { $pop: { members: user_id }})
         console.log("Removed user from " + team.name);

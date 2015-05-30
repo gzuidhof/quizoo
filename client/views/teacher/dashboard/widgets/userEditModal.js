@@ -22,5 +22,30 @@ Template.userEditModal.events({
     Modal.hide();
     Modal.show('confirmRemoveModal', context);
 
+  },
+  'submit form': function(event,template) {
+    event.preventDefault();
+    var nameFieldValue = event.target.nameField.value;
+
+    if (!nameFieldValue || nameFieldValue.length == 0) {
+      return false;
+    }
+
+    var student_id = template.data._id;
+    Meteor.call('updateStudent', student_id,{name:nameFieldValue})
+
+
+    event.target.nameField.value = "";
+    Modal.hide();
+
+    return false;
+  },
+
+  'click tr': function(event) {
+    Modal.show('userEditModal', this);
   }
+
+
+
+
 });
