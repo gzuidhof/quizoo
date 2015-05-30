@@ -42,7 +42,7 @@ Router.route('/lobby/:_id',function() {
 });
 
 Router.route('/student/quiz', function(){
-  var quizInstance = QuizInstances.findOne({status: {$not: 4}});
+  var quizInstance = QuizInstances.findOne({status: {$in: [0,1,2,3]}});
   this.layout('base');
   this.render('studentQuiz', {data: {quizInstance : quizInstance}})
 });
@@ -55,7 +55,7 @@ Router.route('/teacher/editquiz/:_id', function() {
 });
 
 Router.route('/teacher/quiz', function() {
-  var quizInstance = QuizInstances.findOne({status: { $not: 4 }});
+  var quizInstance = QuizInstances.findOne({status: {$in: [0,1,2,3]}});
   this.layout('base')
   if(quizInstance){
     this.render('teacherQuiz',{data:{quizInstance: quizInstance}});
