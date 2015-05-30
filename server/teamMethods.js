@@ -25,7 +25,7 @@ Meteor.methods({
     var now = new Date();
 
     if(!teamName) {
-      teamName = "Zeekoeien"
+      teamName = Random.choice(Constants.possibleTeamNames)
     }
 
     Teams.insert({
