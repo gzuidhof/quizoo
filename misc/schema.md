@@ -38,10 +38,11 @@ Student: {
 
 Team: {
   _id,
-  class_id: Class _id,
+  //class_id: Class _id,
 
   name: string,
-  members: Student _id[]
+  members: Student _id[],
+  dateCreated: Date
 }
 
 LiveQuiz: {

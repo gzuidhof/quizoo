@@ -17,5 +17,24 @@ Meteor.methods({
         dateCreated: now
       });
     }
-}
+  },
+
+  'insertTeam': function(teamName) {
+    var currentUserId = Meteor.userId();
+    //Todo: Check whether teacher or not
+    var now = new Date();
+
+    if(!teamName) {
+      teamName = "Zeekoeien"
+    }
+
+    Teams.insert({
+      name: teamName,
+      members: [],
+      dateCreated: now
+    });
+
+    console.log('Team "' + teamName + '" created.');
+  },
+
 });

@@ -11,19 +11,20 @@
     <div class="widget-body small">
 
       {{#if hasActiveQuiz}}
-      {{#with getCurrentQuizInstance}}
-        <h4>Lorem ipsum dolor sit amet quiz</h4>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped active" style="width:40%; min-width:4em">
-            40% voltooid
+        {{#with getCurrentQuizInstance}}
+          {{#with getQuiz quiz_id}}
+            <h4>{{name}}</h4>
+          {{/with}}
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" style="width:{{percentageOfQuizCompleted this}}%; min-width:4em">
+              {{percentageOfQuizCompleted this}}% voltooid
+            </div>
           </div>
-        </div>
-
-        <div class="pull-right">
-          <button type="button" class="btn btn-danger btn-sm stop-quiz"> Afbreken </button>
-          <button type="button" class="btn btn-default">Voortzetten</button>
-        </div>
-      {{/with}}
+          <div class="pull-right">
+            <button type="button" class="btn btn-danger btn-sm stop-quiz"> Afbreken </button>
+            <a href="/teacher/quiz" type="button" class="btn btn-default">Voortzetten</a>
+          </div>
+        {{/with}}
       {{else}}
 
       <div class="row">
