@@ -66,5 +66,16 @@ Template.registerHelper('answeredCorrectly',function(quizInstance_id)
                 question_id : currentQuestionIndex,
                 quizInstance_id : quizInstance._id};
   var answer = Answered.findOne(filter);
+  if(!answer){
+    return false;
+  }
   return answer.correct;
+});
+Template.registerHelper('getQuizScore',function(_id)
+{
+  console.log(_id);
+  var answers = Answered.find({quizInstance_id: _id});
+  console.log(answers);
+  return answers;
+
 });
