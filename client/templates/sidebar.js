@@ -58,6 +58,11 @@ Template.sidebar.helpers({
           url: "/teacher/stat",
           icon: "fa fa-bar-chart"
         },
+        {
+          name: "Teams beheren",
+          url: "/teacher/teams",
+          icon: "fa fa-sitemap"
+        },
       ]
     }
 
