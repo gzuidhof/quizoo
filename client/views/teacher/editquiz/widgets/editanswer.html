@@ -1,11 +1,19 @@
 <template name = "editAnswer">
 
     <div class="row">
-      <div class="form-group col-lg-11">
+      <div class="col-lg-1">
+        {{#if answer.correct}}
+        <button type="button" class="btn btn-sm btn-success flip-correct"><i class="fa fa-check-square-o fa-lg"></i></button>
+        {{else}}
+        <button type="button" class="btn btn-sm btn-danger flip-correct"><i class="fa fa-minus-square-o fa-lg"></i></button>
+        {{/if}}
+      </div>
+
+      <div class="form-group col-lg-10">
           <input class="form-control" name="{{answer._id}}" type="text" value="{{answer.value}}" >
       </div>
       <div class="col-lg-1">
-        <button type="button" class="btn btn-sm btn-danger outline remove-quiz"><i class="fa fa-remove"></i></button>
+        <button type="button" class="btn btn-sm btn-danger outline remove-answer"><i class="fa fa-remove"></i></button>
       </div>
 
     </div>

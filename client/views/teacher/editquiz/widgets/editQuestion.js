@@ -21,7 +21,7 @@ Template.editQuestion.events({
 
     return false;
 
-  },
+  }
 
 
 });
