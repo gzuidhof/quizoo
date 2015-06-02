@@ -75,7 +75,28 @@ Template.registerHelper('getQuizScore',function(_id)
 {
   console.log(_id);
   var answers = Answered.find({quizInstance_id: _id});
-  console.log(answers);
+
   return answers;
+
+});
+
+Template.registerHelper('getQuizParticipantIds',function(quizInstance_id)
+{
+
+  var answers = Answered.find({quizInstance_id: quizInstance_id}).fetch();
+  var distinctData = _.uniq(flattened, false, function(d) {return d.user_id});
+  return _.pluck(distinctData, "user_id");
+
+});
+
+
+Template.registerHelper('getScoreOfUser',function(user_id, quizInstance_id)
+{
+
+  var score = Answered.find({user_id : user_id,
+                             quizInstance_id : quizInstance_id,
+                             correct : true}).count();
+  console.log(score);
+  return score;
 
 });

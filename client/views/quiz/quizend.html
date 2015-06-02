@@ -10,8 +10,9 @@
 
   <div class="row">
 
-    {{#each getQuizScore quizInstance._id}}
-      hallo?
+    {{#each getQuizParticipantIds quizInstance._id}}
+
+      {{usernameOfId this}}'s score: {{getScoreOfUser this ../quizInstance._id}} <br>
     {{/each}}
 
   </div>
