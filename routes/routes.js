@@ -16,6 +16,16 @@ Router.route('/login/', {
   }
 });
 
+Router.route('/403', {
+  name: '/403',
+  layoutTemplate: 'base',
+  action: function () {
+    this.render('403');
+  }
+});
+
+
+
 // we want to be sure that the user is logging in
 // for all routes but login
 Router.onBeforeAction(function () {
@@ -23,11 +33,28 @@ Router.onBeforeAction(function () {
         this.redirect('/login');
     } else {
         // required by Iron to process the route handler
-        this.next();
+        var routeName = Router.current().route.getName();
+        if (Router.isAllowedAccess(Meteor.user(), routeName)) {
+          this.next();
+        }
+        else {
+          this.layout('base');
+          this.render('/403');
+        }
     }
 }, {
     except: ['/login']
 });
+
+Router.isAllowedAccess = function(user, route){
+    if (route.indexOf('student') > -1) {
+      return (Roles.userIsInRole(user, ['student']));
+    }
+    else if (route.indexOf('teacher') > -1) {
+      return (Roles.userIsInRole(user, ['teacher']));
+    }
+    return true;
+}
 
 Router.route('/lobby/:_id',function() {
   if(QuizInstances.findOne({_id: this.params_id}))

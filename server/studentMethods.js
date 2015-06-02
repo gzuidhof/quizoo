@@ -4,16 +4,13 @@ Meteor.methods({
     //Todo: Check whether teacher or not
     var now = new Date();
 
-    Accounts.createUser({
+    var user_id = Accounts.createUser({
       username: username,
-      password : 'wachtwoord',
+      password : 'quizoo',
       profile  : {}
     });
 
-    var u = Meteor.users.findOne({username:username});
-    var user_id = u._id;
-
-    Students.insert({
+    var id = Students.insert({
       user_id: user_id,
       createdBy: currentUserId,
       dateCreated: now,
@@ -23,6 +20,9 @@ Meteor.methods({
     });
 
     console.log('Student "' + username + '" created.');
+
+    Roles.addUsersToRoles(user_id, ['student']);
+
   },
 
   'removeStudent': function(student_id) {

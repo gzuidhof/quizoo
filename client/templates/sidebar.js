@@ -28,7 +28,7 @@ Template.sidebar.helpers({
       links: [
         {
           name: "Meedoen met quiz",
-          url: "/lobby",
+          url: "/student/quiz",
           icon: "fa fa-graduation-cap"
         },
         {
