@@ -8,6 +8,7 @@ Template.sidebar.helpers({
   sidebarTitle: "Quizoo",
   sections: [
     {
+      role: 'student,teacher,admin',
       name: "Navigatie",
       links: [
         {
@@ -22,8 +23,8 @@ Template.sidebar.helpers({
         }
       ]
     },
-
     {
+      role: 'student',
       name: "Leerling",
       links: [
         {
@@ -41,6 +42,7 @@ Template.sidebar.helpers({
     },
 
     {
+      role: 'teacher',
       name: "Docent",
       links: [
         {

@@ -7,12 +7,16 @@
           </a>
         </li>
       {{#each sections}}
-          <li class="sidebar-title"><span>{{name}}</span></li>
-          {{#each links}}
-          <li class="sidebar-list">
-            <a href="{{url}}">{{name}} <span class="menu-icon {{icon}}"></span></a>
-          </li>
-          {{/each}}
+          {{#if isInRole role}}
+
+            <li class="sidebar-title"><span>{{name}}</span></li>
+            {{#each links}}
+            <li class="sidebar-list">
+              <a href="{{url}}">{{name}} <span class="menu-icon {{icon}}"></span></a>
+            </li>
+            {{/each}}
+            
+          {{/if}}
       {{/each}}
     </ul>
       <div class="sidebar-footer">
