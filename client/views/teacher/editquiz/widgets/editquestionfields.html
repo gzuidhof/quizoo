@@ -17,7 +17,10 @@
         }}
       {{/each}}
 
-      {{>addAnswer}}
+      {{>addAnswer
+        question_id=question._id
+        correct = false
+      }}
 
     </div>
 

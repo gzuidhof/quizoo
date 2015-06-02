@@ -1,9 +1,22 @@
 <template name="addAnswer">
 
   <form class="from-horizontal" role = "form">
-    <div class = "col-lg-11">
+    <div class="col-lg-1">
+      {{#if correct}}
+      <button type="button" class="btn btn-sm btn-success flip-correct hidden"><i class="fa fa-check-square-o fa-lg"></i></button>
+      {{else}}
+      <button type="button" class="btn btn-sm btn-danger flip-correct hidden"><i class="fa fa-minus-square-o fa-lg"></i></button>
+      {{/if}}
+    </div>
+
+    <div class = "col-lg-10">
       <input class="form-control" name="answerText"  type="text" placeholder="Voer nieuwe optie in">
     </div>
+
+    <div class="col-lg-1">
+      <button type="submit" class="btn btn-sm btn-success outline"><i class="fa fa-plus"></i></button>
+    </div>
+
   </form>
 
 </template>

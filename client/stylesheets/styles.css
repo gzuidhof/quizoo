@@ -18,6 +18,12 @@
     /*padding: 12px 22px;*/
 }
 
+
+.btn-success.outline{
+  border: 1px solid #00FF00;
+  color: #33CC33;
+}
+
 .btn-danger.outline {
     border: 1px solid #D9534F;
     color: #D9534F;
