@@ -5,7 +5,7 @@ Template.editAnswer.events({
     question_id = template.data.question_id;
     answer_id = template.data.answer._id;
     console.log(answer_id)
-    //Meteor.call("removeAnswer", question_id, answer_id);
+
 
     return false;
   },

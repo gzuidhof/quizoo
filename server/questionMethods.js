@@ -99,8 +99,8 @@ Meteor.methods({
     var currentUserId = Meteor.userId();
     var now = new Date();
 
-    Questions.update({_id: question_id}, { $pop: { answers: {_id: answer_id} }});
+    Questions.update({_id: question_id}, { $pull: { answers: {_id: answer_id} }});
 
-    console.log('Removed answer option from question');
+    console.log('Removed answer option from question. id: ' + answer_id );
   },
 });
