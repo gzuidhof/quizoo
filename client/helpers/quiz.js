@@ -84,7 +84,7 @@ Template.registerHelper('getQuizParticipantIds',function(quizInstance_id)
 {
 
   var answers = Answered.find({quizInstance_id: quizInstance_id}).fetch();
-  var distinctData = _.uniq(flattened, false, function(d) {return d.user_id});
+  var distinctData = _.uniq(answers, false, function(d) {return d.user_id});
   return _.pluck(distinctData, "user_id");
 
 });
