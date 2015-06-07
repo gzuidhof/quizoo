@@ -26,9 +26,9 @@
 
   {{#each answers}}
     {{#if isSelectedAnswer ../../quizInstance._id _id}}
-      {{>studentAnswerOption _id=_id value=value color="answer-selected" quizInstance=../../quizInstance}}
+      {{>answerButton _id=_id value=value color="btn-lightgreen" quizInstance=../../quizInstance}}
     {{else}}
-        {{>studentAnswerOption _id=_id value=value quizInstance=../../quizInstance}}
+        {{>answerButton _id=_id value=value color="btn-lightblue" quizInstance=../../quizInstance}}
     {{/if}}
 
   {{/each}}

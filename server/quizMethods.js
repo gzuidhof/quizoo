@@ -18,6 +18,12 @@ Meteor.methods({
   'removeQuiz': function(quiz_id) {
 
     var quiz = Quizzes.findOne({_id:quiz_id});
+    var questionIds = quiz.questions;
+
+    questionIds.forEach(function(x){
+      Meteor.call('removeQuestion',quiz_id, x);
+    });
+
     var name = quiz.name || "NO NAME";
 
     Quizzes.remove({
