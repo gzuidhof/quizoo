@@ -1,12 +1,9 @@
 .btn-answerbutton{
-  padding: 0px 0px;
-  font-size: 75px;
+  padding: 18px 28px;
   line-height: normal;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  overflow: hidden;
-  white-space: normal;
 }
 
 .btn-lightblue{
@@ -23,4 +20,29 @@
 
 .btn-lightred{
   background-color: #FF5C33;
+}
+
+.btn-responsive-font{
+  font-size: 3em;
+}
+
+@media (max-width: 768px) {
+.btn-responsive {
+  font-size:150%;
+  line-height: 1;
+}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+.btn-responsive {
+  font-size:200%;
+  line-height: 1.2;
+}
+}
+
+@media (min-width: 993px) {
+.btn-responsive {
+  font-size:300%;
+  line-height: 1.2;
+}
 }
