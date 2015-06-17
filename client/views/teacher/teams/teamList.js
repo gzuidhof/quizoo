@@ -25,7 +25,7 @@ Template.teamList.events({
 
 
     var team_id = this.teamInfo._id;
-    var stud_id = this.memberInfo._id;
+    var stud_id = this.memberInfo.user_id;
     Meteor.call("removeUserFromTeam", stud_id, team_id);
     Session.set("studentSelected", undefined);
     Session.set("teamSelected", undefined);
@@ -33,12 +33,12 @@ Template.teamList.events({
   },
   'click .select-student-in-team': function(event, template) {
 
-    if(Session.get("studentSelected") == this.memberInfo._id){
+    if(Session.get("studentSelected") == this.memberInfo.user_id){
       Session.set("studentSelected", undefined);
       Session.set("teamSelected", undefined);
     }
     else{
-      Session.set("studentSelected", this.memberInfo._id);
+      Session.set("studentSelected", this.memberInfo.user_id);
       Session.set("teamSelected", this.teamInfo._id);
     }
   },

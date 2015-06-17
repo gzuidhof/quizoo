@@ -89,6 +89,19 @@ Template.registerHelper('getQuizParticipantIds',function(quizInstance_id)
 
 });
 
+Template.registerHelper('getScoreOfUsers',function(user_ids, quizInstance_id)
+{
+  score_total = 0
+  user_ids.forEach(function(user_id){
+    var score = Answered.find({user_id : user_id,
+                               quizInstance_id : quizInstance_id,
+                               correct : true}).count();
+    score_total += score;
+  });
+
+  return score_total;
+
+});
 
 Template.registerHelper('getScoreOfUser',function(user_id, quizInstance_id)
 {

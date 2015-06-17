@@ -9,8 +9,8 @@
 
       <div class="list-group">
         {{#each allStudents}}
-          {{#if isStudentNotAssigned _id}}
-            <a href="#" class="list-group-item {{#if isStudentSelected _id}} list-group-item-success {{/if}} select-student">{{name}}</a>
+          {{#if isStudentNotAssigned user_id}}
+            <a href="#" class="list-group-item {{#if isStudentSelected user_id}} list-group-item-success {{/if}} select-student">{{name}}</a>
           {{/if}}
         {{/each}}
       </div>

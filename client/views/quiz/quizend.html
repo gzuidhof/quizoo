@@ -8,10 +8,16 @@
 
 <template name="quizEnd">
 
-  {{#each getQuizParticipantIds quizInstance._id}}
-  <div class="panel panel-default">
-    <a href="#" class="list-group-item ">{{usernameOfId this}}: {{getScoreOfUser this ../quizInstance._id}}</a>
-  </div>
+  {{#each allTeams}}
+    {{#with getQuizParticipantIds ../quizInstance._id}}
+
+      {{#if participatingTeam .. this}}
+      <div class="panel panel-default">
+        <a href="#" class="list-group-item "><h2>{{../name}}: {{getScoreOfUsers ../members ../../quizInstance._id}}</h2></a>
+      </div>
+      {{/if}}
+
+    {{/with}}
   {{/each}}
 
 </template>
