@@ -12,11 +12,13 @@
     color="blue"
     icon="fa fa-graduation-cap"}}
 
+  {{#with teamNameOfUser allTeams currentUserId}}
   {{> studentTile
-    value=2
+    value=this
     title="Teams"
     color="red"
     icon="fa fa-users"}}
+  {{/with}}
 
   {{> studentTile
     value="Duzend"

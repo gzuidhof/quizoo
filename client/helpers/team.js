@@ -29,3 +29,16 @@ Template.registerHelper('participatingTeam', function(team, participant_ids) {
 
   return contains_participant;
 });
+
+Template.registerHelper('teamNameOfUser', function(teams, user_id) {
+  teamname = "Geen team"
+  teams.forEach(function (team){
+    var member_ids = team.members
+
+    if(_.contains(member_ids, user_id)){
+        teamname = team.name;
+    }
+
+  });
+  return teamname;
+});
