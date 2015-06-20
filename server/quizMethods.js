@@ -9,7 +9,8 @@ Meteor.methods({
       createdBy: currentUserId,
       dateCreated: now,
       dateModified: now,
-      questions: []
+      questions: [],
+      time: "01:00"
     });
 
     console.log('Quiz "' + quizName + '" created.');

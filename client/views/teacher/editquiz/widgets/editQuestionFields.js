@@ -20,12 +20,14 @@ Template.editQuestionFields.events({
 
     var answers = template.data.question.answers;
 
+    console.log(event)
     //update answers
     for (var i = 0 ; i < answers.length ; i++ ){
       var answer_id = answers[i]._id;
       var answer = event.target[answer_id].value;
       var ifCorrect = answers[i].correct;
 
+    console.log("hallo");
       Meteor.call('updateAnswer', question_id, answer_id, {value:answer, _id:answer_id, correct:ifCorrect});
     }
 
