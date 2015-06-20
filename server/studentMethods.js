@@ -14,7 +14,7 @@ Meteor.methods({
       user_id: user_id,
       createdBy: currentUserId,
       dateCreated: now,
-      name: "Zonder Naam",
+      name: username,
       points: 0,
       powers: []
     });
