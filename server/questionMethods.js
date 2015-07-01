@@ -26,7 +26,7 @@ Meteor.methods({
     var question = Questions.findOne({_id:question_id});
     var text = question.text || "without text";
 
-    Quizzes.update({_id: quiz_id}, {$pull: {questions:{_id: question_id}}});
+    Quizzes.update({_id: quiz_id}, {$pull: {questions: question_id}});
 
     Questions.remove({
       _id: question_id,
